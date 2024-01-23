@@ -31,6 +31,17 @@ export const getColorOptions = (mode: "light" | "dark"): PaletteOptions => {
     tertiary: {
       main: "#002F95",
     },
+    blue: {
+      main: "#0EA5E9",
+    },
+    green: {
+      main: "#00AD94",
+    },
+    yellow: {
+      main: "FEAD13",
+    },
+    orange: { main: "E66E3C" },
+    red: { main: "F81550" },
     background: {
       // This is more of a standard grey
       // default: "#3F598E",
@@ -40,13 +51,7 @@ export const getColorOptions = (mode: "light" | "dark"): PaletteOptions => {
     divider: "rgba(0, 0, 0, 0.12)",
   };
 
-  const dark = {
-    primary: light.primary,
-    secondary: light.secondary,
-    tertiary: light.tertiary,
-  };
-
-  return mode === "dark" ? dark : light;
+  return light;
 };
 
 export const getThemeOptions = (

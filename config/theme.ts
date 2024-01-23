@@ -20,16 +20,8 @@ export const getColorOptions = (): PaletteOptions => {
   const palette = {
     primary: {
       light: "#FB9B4C",
-      main: "#FA8320",
+      main: "#1A1D25",
       dark: "#C86819",
-    },
-    secondary: {
-      light: "#4CABFB",
-      main: "#2097fa",
-      dark: "#1978C8",
-    },
-    tertiary: {
-      main: "#002F95",
     },
     blue: {
       main: "#0EA5E9",
@@ -43,9 +35,7 @@ export const getColorOptions = (): PaletteOptions => {
     orange: { main: "E66E3C" },
     red: { main: "F81550" },
     background: {
-      // This is more of a standard grey
-      // default: "#3F598E",
-      default: "#4F7390",
+      default: "#1A1D25",
       paper: "#FFFFFF",
     },
     divider: "rgba(0, 0, 0, 0.12)",
@@ -55,20 +45,15 @@ export const getColorOptions = (): PaletteOptions => {
 };
 
 export const getThemeOptions = (
-  mode: PaletteMode,
   primaryColor: string = "",
   secondaryColor: string = ""
 ): ThemeOptions => ({
   palette: {
-    mode,
     ...getColorOptions(),
     ...(Boolean(primaryColor)
       ? {
           primary: {
             main: primaryColor,
-          },
-          tertiary: {
-            main: darken(primaryColor, 0.25),
           },
         }
       : {}),

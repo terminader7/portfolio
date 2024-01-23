@@ -16,8 +16,8 @@ export const breakpoints: { values: Breakpoints["values"] } = {
   },
 };
 
-export const getColorOptions = (mode: "light" | "dark"): PaletteOptions => {
-  const light = {
+export const getColorOptions = (): PaletteOptions => {
+  const palette = {
     primary: {
       light: "#FB9B4C",
       main: "#FA8320",
@@ -51,7 +51,7 @@ export const getColorOptions = (mode: "light" | "dark"): PaletteOptions => {
     divider: "rgba(0, 0, 0, 0.12)",
   };
 
-  return light;
+  return palette;
 };
 
 export const getThemeOptions = (
@@ -61,7 +61,7 @@ export const getThemeOptions = (
 ): ThemeOptions => ({
   palette: {
     mode,
-    ...getColorOptions(mode),
+    ...getColorOptions(),
     ...(Boolean(primaryColor)
       ? {
           primary: {

@@ -3,8 +3,11 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import InlineContainer from "../components/InlineContainer";
 import LinkButton from "../components/LinkButton";
+import { ThemeConsumer } from "styled-components";
+import { useTheme } from "@mui/material";
 
 export default function Home() {
+  const theme = useTheme();
   return (
     <Box>
       <Head>
@@ -43,13 +46,13 @@ export default function Home() {
             <LinkButton
               href=""
               text="Resume"
-              color="primary.red"
+              color={theme.palette.primary.red}
               hoverColor="common.white"
             />
             <LinkButton
               href="https://www.linkedin.com/in/nader-ebrahim-28576b199/"
               text="LinkedIn"
-              color="primary.red"
+              color={theme.palette.primary.red}
               hoverColor="common.white"
             />
           </InlineContainer>

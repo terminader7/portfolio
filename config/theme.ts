@@ -1,10 +1,4 @@
-import {
-  Breakpoints,
-  darken,
-  PaletteMode,
-  ThemeOptions,
-  PaletteOptions,
-} from "@mui/material";
+import { Breakpoints, ThemeOptions, PaletteOptions } from "@mui/material";
 
 export const breakpoints: { values: Breakpoints["values"] } = {
   values: {

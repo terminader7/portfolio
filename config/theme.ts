@@ -19,21 +19,13 @@ export const breakpoints: { values: Breakpoints["values"] } = {
 export const getColorOptions = (): PaletteOptions => {
   const palette = {
     primary: {
-      light: "#FB9B4C",
-      main: "#1A1D25",
-      dark: "#C86819",
-    },
-    blue: {
       main: "#0EA5E9",
+      green: "#00AD94",
+      blue: "#0EA5E9",
+      yellow: "#FEAD13",
+      orange: "#E66E3C",
+      red: "#F81550",
     },
-    green: {
-      main: "#00AD94",
-    },
-    yellow: {
-      main: "FEAD13",
-    },
-    orange: { main: "E66E3C" },
-    red: { main: "F81550" },
     background: {
       default: "#1A1D25",
       paper: "#FFFFFF",

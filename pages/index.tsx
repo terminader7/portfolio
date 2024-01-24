@@ -37,12 +37,18 @@ export default function Home() {
               textAlign: "center",
             }}
           >
-            Thanks for stopping by! <br /> Take a look around.
+            Thanks for stopping by, <br /> take a look around.
           </Typography>
-          <InlineContainer>
+          <InlineContainer gap="2rem">
             <LinkButton
               href=""
               text="Resume"
+              color="primary.red"
+              hoverColor="common.white"
+            />
+            <LinkButton
+              href="https://www.linkedin.com/in/nader-ebrahim-28576b199/"
+              text="LinkedIn"
               color="primary.red"
               hoverColor="common.white"
             />

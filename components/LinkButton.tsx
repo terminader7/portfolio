@@ -12,9 +12,10 @@ const LinkButton = ({ href, text, color, hoverColor }) => {
           borderColor: { hoverColor },
         },
       }}
+      onClick={() => window.open(href, "_blank")}
     >
       <Typography
-        variant="h5"
+        variant="h6"
         sx={{
           textAlign: "center",
           paddingInline: "4rem",

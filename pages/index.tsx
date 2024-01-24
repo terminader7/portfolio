@@ -10,10 +10,19 @@ export default function Home() {
         <meta name="description" content="Nader's Portfolio" />
         <link rel="icon" href="/images/favicon.svg" />
       </Head>
-      <Typography variant="h4" sx={{ color: "green.main" }}>
-        {`Hey! Thanks for stopping by, I'm Nader.`}
+      <Typography
+        variant="h4"
+        sx={{ color: "common.white", fontWeight: "bold" }}
+      >
+        {`Thanks for stopping by, I'm Nader.`}
       </Typography>
-      <Image src="/images/picOfMe.jpg" alt="Nader" width={600} height={600} />
+      <Image
+        src="/images/picOfMe.jpg"
+        alt="Nader"
+        width={200}
+        height={200}
+        style={{ borderRadius: "20px" }}
+      />
     </Box>
   );
 }

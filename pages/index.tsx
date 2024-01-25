@@ -4,6 +4,7 @@ import InlineContainer from "../components/InlineContainer";
 import LinkButton from "../components/LinkButton";
 import { useTheme } from "@mui/material";
 import MultiColorLine from "../components/MultiColorLine";
+// import Image from "next/image";
 
 export default function Home() {
   const theme = useTheme();

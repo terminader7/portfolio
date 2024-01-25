@@ -5,7 +5,7 @@ const MultiColorLine = () => {
   return (
     <InlineContainer
       height="20px"
-      width="30rem"
+      width="100%"
       alignItems="center"
       justifyContent="center"
     >
@@ -17,14 +17,7 @@ const MultiColorLine = () => {
           overflow: "hidden",
         }}
       />
-      <Box
-        sx={{
-          backgroundColor: "primary.green",
-          height: "100%",
-          width: "100%",
-          overflow: "hidden",
-        }}
-      />
+
       <Box
         sx={{
           backgroundColor: "primary.orange",
@@ -43,6 +36,14 @@ const MultiColorLine = () => {
       />
       <Box
         sx={{
+          backgroundColor: "primary.green",
+          height: "100%",
+          width: "100%",
+          overflow: "hidden",
+        }}
+      />
+      <Box
+        sx={{
           backgroundColor: "primary.blue",
           height: "100%",
           width: "100%",
@@ -52,3 +53,5 @@ const MultiColorLine = () => {
     </InlineContainer>
   );
 };
+
+export default MultiColorLine;

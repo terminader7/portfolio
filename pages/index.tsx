@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import InlineContainer from "../components/InlineContainer";
 import LinkButton from "../components/LinkButton";
 import { useTheme } from "@mui/material";
+import MultiColorLine from "../components/MultiColorLine";
 
 export default function Home() {
   const theme = useTheme();
@@ -18,63 +19,30 @@ export default function Home() {
           width: "100%",
           justifyContent: "space-between",
           paddingInline: "3rem",
+          alignItems: "center",
+          height: "100vh",
         }}
       >
-        <Box>
+        <Box display="flex" gap="1rem" flexDirection="column">
+          <Typography
+            variant="h5"
+            textAlign="center"
+            sx={{
+              color: "common.white",
+              fontWeight: "bold",
+              textAlign: "start",
+            }}
+          >
+            Nader Ebrahim
+          </Typography>
           <Typography
             variant="h3"
             textAlign="center"
             sx={{ color: "common.white", fontWeight: "bold" }}
           >
-            Nader Ebrahim <br /> Frontend Developer
+            Frontend Software Developer
           </Typography>
-          <InlineContainer
-            height="20px"
-            width="30rem"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Box
-              sx={{
-                backgroundColor: "primary.red",
-                height: "100%",
-                width: "100%",
-                overflow: "hidden",
-              }}
-            />
-            <Box
-              sx={{
-                backgroundColor: "primary.green",
-                height: "100%",
-                width: "100%",
-                overflow: "hidden",
-              }}
-            />
-            <Box
-              sx={{
-                backgroundColor: "primary.orange",
-                height: "100%",
-                width: "100%",
-                overflow: "hidden",
-              }}
-            />
-            <Box
-              sx={{
-                backgroundColor: "primary.yellow",
-                height: "100%",
-                width: "100%",
-                overflow: "hidden",
-              }}
-            />
-            <Box
-              sx={{
-                backgroundColor: "primary.blue",
-                height: "100%",
-                width: "100%",
-                overflow: "hidden",
-              }}
-            />
-          </InlineContainer>
+          <MultiColorLine />
         </Box>
         <Box display="flex" flexDirection="column" gap="1rem">
           <Typography

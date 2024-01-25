@@ -1,5 +1,23 @@
 import { Breakpoints, ThemeOptions, PaletteOptions } from "@mui/material";
 
+declare module "@mui/material/styles" {
+  interface PaletteColor {
+    red?: string;
+    green?: string;
+    blue?: string;
+    yellow?: string;
+    orange?: string;
+  }
+
+  interface SimplePaletteColorOptions {
+    red?: string;
+    green?: string;
+    blue?: string;
+    yellow?: string;
+    orange?: string;
+  }
+}
+
 export const breakpoints: { values: Breakpoints["values"] } = {
   values: {
     xs: 0,
@@ -11,14 +29,20 @@ export const breakpoints: { values: Breakpoints["values"] } = {
 };
 
 export const getColorOptions = (): PaletteOptions => {
+  const red = "#F81550";
+  const green = "#00AD94";
+  const blue = "#0EA5E9";
+  const yellow = "#FEAD13";
+  const orange = "#E66E3C";
+
   const palette = {
     primary: {
       main: "#0EA5E9",
-      green: "#00AD94",
-      blue: "#0EA5E9",
-      yellow: "#FEAD13",
-      orange: "#E66E3C",
-      red: "#F81550",
+      green,
+      blue,
+      yellow,
+      orange,
+      red,
     },
     background: {
       default: "#1A1D25",

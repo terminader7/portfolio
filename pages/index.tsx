@@ -4,6 +4,7 @@ import InlineContainer from "../components/InlineContainer";
 import LinkButton from "../components/LinkButton";
 import { useTheme } from "@mui/material";
 import MultiColorLine from "../components/MultiColorLine";
+import SkillChip from "../components/SkillChip";
 // import Image from "next/image";
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
           height: "100vh",
         }}
       >
-        <Box display="flex" gap="1rem" flexDirection="column">
+        <Box display="flex" gap="1rem" flexDirection="column" width="40%">
           <Typography
             variant="h5"
             textAlign="center"
@@ -38,12 +39,67 @@ export default function Home() {
           </Typography>
           <Typography
             variant="h3"
-            textAlign="center"
             sx={{ color: "common.white", fontWeight: "bold" }}
           >
             Frontend Software Developer
           </Typography>
           <MultiColorLine />
+          <Typography variant="h6" color="common.white">
+            I specialize in crafting visually appealing and seamlessly
+            functional user interfaces. And I thrive on transforming abstract
+            concepts into tangible, user-friendly experiences.
+          </Typography>
+          <Box>
+            <Typography
+              variant="h4"
+              color="common.white"
+              fontWeight={600}
+              marginBottom=".5rem"
+            >
+              Skillset
+            </Typography>
+            <InlineContainer gap=".5rem" width="70%" sx={{ flexWrap: "wrap" }}>
+              <SkillChip label="HTML" background={theme.palette.primary.red} />
+              <SkillChip label="CSS" background={theme.palette.primary.red} />
+              <SkillChip
+                label="JavaScript"
+                background={theme.palette.primary.red}
+              />
+              <SkillChip
+                label="React"
+                background={theme.palette.primary.orange}
+              />
+              <SkillChip
+                label="Next.js"
+                background={theme.palette.primary.orange}
+              />
+              <SkillChip
+                label="TypeScript"
+                background={theme.palette.primary.orange}
+              />{" "}
+              <SkillChip
+                label="Material UI"
+                background={theme.palette.primary.yellow}
+              />
+              <SkillChip
+                label="Tailwind CSS"
+                background={theme.palette.primary.yellow}
+              />
+              <SkillChip
+                label="VSCode"
+                background={theme.palette.primary.green}
+              />
+              <SkillChip
+                label="CLion"
+                background={theme.palette.primary.green}
+              />
+              <SkillChip
+                label="Warp"
+                background={theme.palette.primary.green}
+              />
+              <SkillChip label="Git" background={theme.palette.primary.blue} />
+            </InlineContainer>
+          </Box>
         </Box>
         <Box display="flex" flexDirection="column" gap="1rem">
           <Typography

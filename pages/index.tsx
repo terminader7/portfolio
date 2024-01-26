@@ -20,7 +20,7 @@ export default function Home() {
         sx={{
           width: "100%",
           justifyContent: "space-between",
-          paddingInline: "3rem",
+          paddingInline: "5rem",
           alignItems: "center",
           height: "100vh",
         }}

@@ -48,6 +48,10 @@ export const getColorOptions = (): PaletteOptions => {
       default: "#1A1D25",
       paper: "#FFFFFF",
     },
+    text: {
+      primary: "#FFFFFF",
+      secondary: "#000000",
+    },
     divider: "rgba(0, 0, 0, 0.12)",
   };
 

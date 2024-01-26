@@ -30,32 +30,23 @@ export default function Home() {
             variant="h5"
             textAlign="center"
             sx={{
-              color: "common.white",
               fontWeight: "bold",
               textAlign: "start",
             }}
           >
             Nader Ebrahim
           </Typography>
-          <Typography
-            variant="h3"
-            sx={{ color: "common.white", fontWeight: "bold" }}
-          >
+          <Typography variant="h3" sx={{ fontWeight: "bold" }}>
             Frontend Software Developer
           </Typography>
           <MultiColorLine />
-          <Typography variant="h6" color="common.white">
+          <Typography variant="h6">
             I specialize in crafting visually appealing and seamlessly
             functional user interfaces. And I thrive on transforming abstract
             concepts into tangible, user-friendly experiences.
           </Typography>
           <Box>
-            <Typography
-              variant="h4"
-              color="common.white"
-              fontWeight={600}
-              marginBottom=".5rem"
-            >
+            <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
               Skillset
             </Typography>
             <InlineContainer gap=".5rem" width="70%" sx={{ flexWrap: "wrap" }}>
@@ -100,12 +91,19 @@ export default function Home() {
               <SkillChip label="Git" background={theme.palette.primary.blue} />
             </InlineContainer>
           </Box>
+          <Box>
+            <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
+              Get In Touch
+            </Typography>
+            <Typography variant="h6">
+              {`Want to work together? Let's chat!`}
+            </Typography>
+          </Box>
         </Box>
         <Box display="flex" flexDirection="column" gap="1rem">
           <Typography
             variant="h4"
             sx={{
-              color: "common.white",
               fontWeight: "bold",
               textAlign: "center",
             }}

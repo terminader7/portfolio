@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import InlineContainer from "../components/InlineContainer";
 import LinkButton from "../components/LinkButton";
 import { useTheme } from "@mui/material";
@@ -14,8 +14,9 @@ import IconButton from "@mui/material/IconButton";
 
 export default function Home() {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Box>
+    <Box paddingInline="5rem">
       <Head>
         <title>Naders Portfolio</title>
         <meta name="description" content="Nader's Portfolio" />
@@ -25,7 +26,6 @@ export default function Home() {
         sx={{
           width: "100%",
           justifyContent: "space-between",
-          paddingInline: "5rem",
           alignItems: "center",
           height: "100vh",
         }}
@@ -205,6 +205,45 @@ export default function Home() {
           /> */}
         </Box>
       </InlineContainer>
+      <Box display="flex" flexDirection="column" gap="1rem">
+        <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
+          Experience
+        </Typography>
+        <InlineContainer
+          sx={{
+            flexDirection: isMobile ? "column" : "row",
+            gap: "10rem",
+          }}
+        >
+          <Typography variant="h6" fontWeight={600}>
+            Sincera
+          </Typography>
+          <Typography variant="h6" fontWeight={600}>
+            Finli
+          </Typography>
+        </InlineContainer>
+      </Box>
+      <Box display="flex" flexDirection="column" gap="1rem">
+        <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
+          Projects
+        </Typography>
+        <InlineContainer
+          sx={{
+            flexDirection: isMobile ? "column" : "row",
+            gap: "10rem",
+          }}
+        >
+          <Typography variant="h6" fontWeight={600}>
+            Hoops Hoopla
+          </Typography>
+          <Typography variant="h6" fontWeight={600}>
+            Github Finder
+          </Typography>
+          <Typography variant="h6" fontWeight={600}>
+            Contact Keeper
+          </Typography>
+        </InlineContainer>
+      </Box>
     </Box>
   );
 }

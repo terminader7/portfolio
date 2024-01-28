@@ -5,6 +5,11 @@ import LinkButton from "../components/LinkButton";
 import { useTheme } from "@mui/material";
 import MultiColorLine from "../components/MultiColorLine";
 import SkillChip from "../components/SkillChip";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailIcon from "@mui/icons-material/Email";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import IconButton from "@mui/material/IconButton";
 // import Image from "next/image";
 
 export default function Home() {
@@ -91,6 +96,79 @@ export default function Home() {
                 background={theme.palette.primary.green}
               />
               <SkillChip label="Git" background={theme.palette.primary.blue} />
+            </InlineContainer>
+          </Box>
+          <Box>
+            <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
+              Get In Touch
+            </Typography>
+            <InlineContainer gap="1rem">
+              <IconButton
+                onClick={() => {
+                  window.open(
+                    "https://www.linkedin.com/in/nader-ebrahim-28576b199/"
+                  );
+                }}
+              >
+                <LinkedInIcon
+                  fontSize="large"
+                  sx={{
+                    color: "common.white",
+                    ":hover": {
+                      transition: "all .2s ease-in-out",
+                      transform: "scale(1.2)",
+                    },
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => {
+                  window.open("https://github.com/terminader7");
+                }}
+              >
+                <GitHubIcon
+                  fontSize="large"
+                  sx={{
+                    color: "common.white",
+                    ":hover": {
+                      transition: "all .2s ease-in-out",
+                      transform: "scale(1.2)",
+                    },
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => {
+                  window.open("mailto:mohammed.n.ebrahim@gmail.com");
+                }}
+              >
+                <EmailIcon
+                  fontSize="large"
+                  sx={{
+                    color: "common.white",
+                    ":hover": {
+                      transition: "all .2s ease-in-out",
+                      transform: "scale(1.2)",
+                    },
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => {
+                  window.open("https://www.instagram.com/the_terminader/");
+                }}
+              >
+                <InstagramIcon
+                  fontSize="large"
+                  sx={{
+                    color: "common.white",
+                    ":hover": {
+                      transition: "all .2s ease-in-out",
+                      transform: "scale(1.2)",
+                    },
+                  }}
+                />
+              </IconButton>
             </InlineContainer>
           </Box>
         </Box>

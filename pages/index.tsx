@@ -47,9 +47,9 @@ export default function Home() {
             </Typography>
             <MultiColorLine />
             <Typography variant="h6">
-              I specialize in crafting visually appealing and seamlessly
-              functional user interfaces. And I thrive on transforming abstract
-              concepts into tangible, user-friendly experiences.
+              I specialize in crafting visually appealing, seamlessly functional
+              user interfaces and thrive on transforming abstract concepts into
+              tangible, user-friendly experiences.
             </Typography>
           </Box>
           <Box>

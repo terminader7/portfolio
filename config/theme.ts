@@ -80,7 +80,7 @@ export const getThemeOptions = (
       : {}),
   },
   typography: {
-    fontFamily: "Avenir, sans-serif",
+    fontFamily: "roboto, sans-serif",
     fontSize: 14,
   },
   components: {
@@ -88,7 +88,7 @@ export const getThemeOptions = (
       styleOverrides: {
         root: {
           color: "currentColor",
-          fontFamily: "Avenir, sans-serif",
+          fontFamily: "roboto, sans-serif",
         },
       },
     },

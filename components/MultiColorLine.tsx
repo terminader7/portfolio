@@ -1,13 +1,22 @@
 import { Box } from "@mui/material";
 import InlineContainer from "./InlineContainer";
 
-const MultiColorLine = () => {
+const MultiColorLine = ({
+  height,
+  width,
+  direction = "row",
+}: {
+  height: string;
+  width: string;
+  direction?: "row" | "column";
+}) => {
   return (
     <InlineContainer
-      height="20px"
-      width="100%"
+      height={height}
+      width={width}
       alignItems="center"
       justifyContent="center"
+      direction={direction}
     >
       <Box
         sx={{
@@ -17,7 +26,6 @@ const MultiColorLine = () => {
           overflow: "hidden",
         }}
       />
-
       <Box
         sx={{
           backgroundColor: "primary.orange",

@@ -13,6 +13,8 @@ import IconButton from "@mui/material/IconButton";
 import Image from "next/image";
 import Divider from "@mui/material/Divider";
 
+// For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
+
 export default function Home() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -46,7 +48,7 @@ export default function Home() {
             <Typography variant="h3" sx={{ fontWeight: "bold" }}>
               Frontend Software Developer
             </Typography>
-            <MultiColorLine />
+            <MultiColorLine height={"20px"} width={"100%"} />
             <Typography variant="h6">
               I specialize in crafting visually appealing, seamlessly functional
               user interfaces and thrive on transforming abstract concepts into
@@ -118,6 +120,7 @@ export default function Home() {
                     ":hover": {
                       transition: "all .2s ease-in-out",
                       transform: "scale(1.2)",
+                      color: theme.palette.primary.red,
                     },
                   }}
                 />
@@ -216,26 +219,17 @@ export default function Home() {
             gap: "10rem",
           }}
         >
-          <Box display="flex" flexDirection="column">
-            {/* <Image
-              src="/images/sincera.png"
-              alt="Nader"
-              width={400}
-              height={200}
-              style={{ borderRadius: "10px", cursor: "pointer" }}
-            /> */}
+          <Box
+            display="flex"
+            flexDirection="column"
+            sx={{ backgroundColor: "common.black" }}
+          >
             <Typography variant="h6" fontWeight={600} textAlign="center">
               Sincera
             </Typography>
           </Box>
+          <MultiColorLine height={"100px"} width={"5px"} direction="column" />
           <Box display="flex" flexDirection="column">
-            {/* <Image
-              src="/images/finli.png"
-              alt="Nader"
-              width={400}
-              height={200}
-              style={{ borderRadius: "10px", cursor: "pointer" }}
-            /> */}
             <Typography variant="h6" fontWeight={600} textAlign="center">
               Finli
             </Typography>

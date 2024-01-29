@@ -46,7 +46,7 @@ export const getColorOptions = (): PaletteOptions => {
     },
     background: {
       default: "#1A1D25",
-      paper: "#FFFFFF",
+      paper: "#25282F",
     },
     text: {
       primary: "#FFFFFF",

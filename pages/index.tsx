@@ -10,14 +10,29 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import IconButton from "@mui/material/IconButton";
+import Card from "@mui/material/Card";
 import Image from "next/image";
 import Divider from "@mui/material/Divider";
+import ExperienceCard from "../components/ExperienceCard";
 
 // For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
 
 export default function Home() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const sinceraDescription = `Developed Next.js websites for clients from a multitude of
+  backgrounds from ecommerce to digital marketing. Collaborated
+  with a small team cultivating an agile work environment and
+  ensured every feature release was on time and to the clients
+  exact specifications.`;
+
+  const finliDescription = `Designed and developed interactive UI components using modern JavaScript frameworks,
+  resulting in a more engaging and dynamic user interface. Developed and implemented responsive web designs, ensuring optimal user experience
+  across various devices and screen sizes.Collaborated closely with backend developers to bridge the gap between front-end and
+  backend functionalities, showcasing adaptability by contributing to full-stack development
+  tasks when needed.`;
+
   return (
     <Box paddingInline="5rem">
       <Head>
@@ -99,6 +114,10 @@ export default function Home() {
                 background={theme.palette.primary.green}
               />
               <SkillChip label="Git" background={theme.palette.primary.blue} />
+              <SkillChip
+                label="Node.js"
+                background={theme.palette.primary.blue}
+              />
             </InlineContainer>
           </Box>
           <Box>
@@ -216,24 +235,28 @@ export default function Home() {
         <InlineContainer
           sx={{
             flexDirection: isMobile ? "column" : "row",
-            gap: "10rem",
+            gap: "1rem",
           }}
         >
-          <Box
-            display="flex"
-            flexDirection="column"
-            sx={{ backgroundColor: "common.black" }}
-          >
-            <Typography variant="h6" fontWeight={600} textAlign="center">
-              Sincera
-            </Typography>
-          </Box>
-          <MultiColorLine height={"100px"} width={"5px"} direction="column" />
-          <Box display="flex" flexDirection="column">
-            <Typography variant="h6" fontWeight={600} textAlign="center">
-              Finli
-            </Typography>
-          </Box>
+          <ExperienceCard
+            imageSrc={"/images/sincera-logo.jpg"}
+            companyName="Sincera"
+            jobTitle="Frontend Engineer"
+            timeWorked="Nov 2020 - Aug 2022"
+            description={sinceraDescription}
+          />
+          <Divider
+            orientation="horizontal"
+            flexItem
+            sx={{ borderColor: "common.white", width: "200px" }}
+          />
+          <ExperienceCard
+            imageSrc={"/images/finli-logo.jpg"}
+            companyName="Finli"
+            jobTitle="Frontend Engineer L3"
+            timeWorked="Aug 2022 - Dec 2023"
+            description={finliDescription}
+          />
         </InlineContainer>
       </Box>
       <Box display="flex" flexDirection="column" gap="1rem">

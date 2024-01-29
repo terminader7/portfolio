@@ -10,7 +10,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import IconButton from "@mui/material/IconButton";
-// import Image from "next/image";
+import Image from "next/image";
 
 export default function Home() {
   const theme = useTheme();
@@ -205,7 +205,7 @@ export default function Home() {
           /> */}
         </Box>
       </InlineContainer>
-      <Box display="flex" flexDirection="column" gap="1rem">
+      <Box display="flex" flexDirection="column" gap="1rem" marginBottom="4rem">
         <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
           Experience
         </Typography>
@@ -215,12 +215,30 @@ export default function Home() {
             gap: "10rem",
           }}
         >
-          <Typography variant="h6" fontWeight={600}>
-            Sincera
-          </Typography>
-          <Typography variant="h6" fontWeight={600}>
-            Finli
-          </Typography>
+          <Box display="flex" flexDirection="column">
+            <Image
+              src="/images/sincera.png"
+              alt="Nader"
+              width={400}
+              height={200}
+              style={{ borderRadius: "10px" }}
+            />
+            <Typography variant="h6" fontWeight={600} textAlign="center">
+              Sincera
+            </Typography>
+          </Box>
+          <Box display="flex" flexDirection="column">
+            <Image
+              src="/images/finli.png"
+              alt="Nader"
+              width={400}
+              height={200}
+              style={{ borderRadius: "10px" }}
+            />
+            <Typography variant="h6" fontWeight={600} textAlign="center">
+              Finli
+            </Typography>
+          </Box>
         </InlineContainer>
       </Box>
       <Box display="flex" flexDirection="column" gap="1rem">

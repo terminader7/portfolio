@@ -106,10 +106,6 @@ export default function Home() {
                 background={theme.palette.primary.green}
               />
               <SkillChip
-                label="CLion"
-                background={theme.palette.primary.green}
-              />
-              <SkillChip
                 label="Warp"
                 background={theme.palette.primary.green}
               />

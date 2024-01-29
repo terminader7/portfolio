@@ -3,7 +3,9 @@ import Card from "@mui/material/Card";
 import MultiColorLine from "./MultiColorLine";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { useTheme } from "@mui/material";
+import { IconButton, useTheme } from "@mui/material";
+import DownArrowIcon from "@mui/icons-material/ExpandMoreRounded";
+import { useState } from "react";
 
 const ExperienceCard = ({
   imageSrc,
@@ -19,6 +21,10 @@ const ExperienceCard = ({
   description: string;
 }) => {
   const theme = useTheme();
+  const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
+  const handleToggle = () => {
+    setIsDescriptionVisible(!isDescriptionVisible);
+  };
   return (
     <Card
       sx={{
@@ -28,7 +34,9 @@ const ExperienceCard = ({
         padding: "1rem",
         gap: "1rem",
         width: "500px",
-        height: "250px",
+        height: "auto",
+        transition: "height 0.7s ease-in-out",
+        position: "relative",
       }}
     >
       <Image
@@ -46,8 +54,22 @@ const ExperienceCard = ({
         <Typography variant="body1" textAlign="start">
           <strong> {jobTitle}</strong> - {timeWorked}
         </Typography>
-        <Typography variant="body1">{description}</Typography>
+        {isDescriptionVisible && (
+          <Typography variant="body1">{description}</Typography>
+        )}
       </Box>
+      <IconButton onClick={handleToggle}>
+        <DownArrowIcon
+          sx={{
+            position: "absolute",
+            bottom: "0",
+            right: "0",
+            color: theme.palette.primary.main,
+            transform: isDescriptionVisible ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.3s ease-in-out",
+          }}
+        />
+      </IconButton>
     </Card>
   );
 };

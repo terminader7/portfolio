@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import MultiColorLine from "./MultiColorLine";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { IconButton, useTheme } from "@mui/material";
+import { IconButton, useMediaQuery, useTheme } from "@mui/material";
 import DownArrowIcon from "@mui/icons-material/ExpandMoreRounded";
 import { useState } from "react";
 
@@ -25,6 +25,7 @@ const ExperienceCard = ({
   const handleToggle = () => {
     setIsDescriptionVisible(!isDescriptionVisible);
   };
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Card
       sx={{
@@ -46,8 +47,8 @@ const ExperienceCard = ({
         height={50}
         style={{ borderRadius: "20px" }}
       />
-      <MultiColorLine height={"100%"} width={"3px"} direction="column" />
-      <Box>
+      <MultiColorLine height={"auto"} width={"2px"} direction="column" />
+      <Box width="90%">
         <Typography variant="h6" fontWeight={600} textAlign="start">
           {companyName}
         </Typography>
@@ -58,13 +59,19 @@ const ExperienceCard = ({
           <Typography variant="body1">{description}</Typography>
         )}
       </Box>
-      <IconButton onClick={handleToggle}>
+      <IconButton
+        onClick={handleToggle}
+        sx={{
+          ":hover": {
+            backgroundColor: "transparent",
+          },
+        }}
+      >
         <DownArrowIcon
           sx={{
             position: "absolute",
             bottom: "0",
-            right: "0",
-            color: theme.palette.primary.main,
+            color: "common.white",
             transform: isDescriptionVisible ? "rotate(180deg)" : "rotate(0deg)",
             transition: "transform 0.3s ease-in-out",
           }}

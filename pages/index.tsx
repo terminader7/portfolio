@@ -224,7 +224,13 @@ export default function Home() {
           /> */}
         </Box>
       </InlineContainer>
-      <Box display="flex" flexDirection="column" gap="1rem" marginBottom="4rem">
+      <Box
+        display="flex"
+        flexDirection="column"
+        gap="1rem"
+        marginBottom="4rem"
+        height="45vh"
+      >
         <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
           Experience
         </Typography>
@@ -244,7 +250,11 @@ export default function Home() {
           <Divider
             orientation="horizontal"
             flexItem
-            sx={{ borderColor: "common.white", width: "200px" }}
+            sx={{
+              borderColor: "common.white",
+              width: "200px",
+              alignSelf: "center",
+            }}
           />
           <ExperienceCard
             imageSrc={"/images/finli-logo.jpg"}

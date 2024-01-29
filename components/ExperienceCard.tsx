@@ -28,6 +28,7 @@ const ExperienceCard = ({
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Card
+      onClick={handleToggle}
       sx={{
         backgroundColor: theme.palette.background.paper,
         display: "flex",
@@ -35,9 +36,13 @@ const ExperienceCard = ({
         padding: "1rem",
         gap: "1rem",
         width: "500px",
-        height: "auto",
-        transition: "height 0.7s ease-in-out",
+        maxHeight: isDescriptionVisible ? "30rem" : "10rem",
+        overflow: "hidden",
+        transition: "max-height .8s ease-in-out",
         position: "relative",
+        ":hover": {
+          cursor: "pointer",
+        },
       }}
     >
       <Image
@@ -59,24 +64,16 @@ const ExperienceCard = ({
           <Typography variant="body1">{description}</Typography>
         )}
       </Box>
-      <IconButton
-        onClick={handleToggle}
+      <DownArrowIcon
         sx={{
-          ":hover": {
-            backgroundColor: "transparent",
-          },
+          position: "absolute",
+          bottom: "15px",
+          right: "5px",
+          color: "common.white",
+          transform: isDescriptionVisible ? "rotate(180deg)" : "rotate(0deg)",
+          transition: "transform 0.3s ease-in-out",
         }}
-      >
-        <DownArrowIcon
-          sx={{
-            position: "absolute",
-            bottom: "0",
-            color: "common.white",
-            transform: isDescriptionVisible ? "rotate(180deg)" : "rotate(0deg)",
-            transition: "transform 0.3s ease-in-out",
-          }}
-        />
-      </IconButton>
+      />
     </Card>
   );
 };

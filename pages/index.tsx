@@ -11,6 +11,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import IconButton from "@mui/material/IconButton";
 import Image from "next/image";
+import Divider from "@mui/material/Divider";
 
 export default function Home() {
   const theme = useTheme();
@@ -216,25 +217,25 @@ export default function Home() {
           }}
         >
           <Box display="flex" flexDirection="column">
-            <Image
+            {/* <Image
               src="/images/sincera.png"
               alt="Nader"
               width={400}
               height={200}
-              style={{ borderRadius: "10px" }}
-            />
+              style={{ borderRadius: "10px", cursor: "pointer" }}
+            /> */}
             <Typography variant="h6" fontWeight={600} textAlign="center">
               Sincera
             </Typography>
           </Box>
           <Box display="flex" flexDirection="column">
-            <Image
+            {/* <Image
               src="/images/finli.png"
               alt="Nader"
               width={400}
               height={200}
-              style={{ borderRadius: "10px" }}
-            />
+              style={{ borderRadius: "10px", cursor: "pointer" }}
+            /> */}
             <Typography variant="h6" fontWeight={600} textAlign="center">
               Finli
             </Typography>

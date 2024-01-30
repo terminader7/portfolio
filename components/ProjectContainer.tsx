@@ -39,10 +39,10 @@ const ProjectContainer = ({
       <InlineContainer gap="1rem">
         <StyledChip
           label={dateCompleted}
-          background={theme.palette.primary.red}
+          background={theme.palette.primary.blue}
         />
         {isWiP && (
-          <StyledChip label="WiP" background={theme.palette.primary.orange} />
+          <StyledChip label="WiP" background={theme.palette.primary.red} />
         )}
       </InlineContainer>
     </Box>

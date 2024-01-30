@@ -215,20 +215,11 @@ export default function Home() {
           </Box>
         </Box>
         <Box display="flex" flexDirection="column" gap="1rem">
-          <InlineContainer gap="2rem">
-            <LinkButton
-              href=""
-              text="Resume"
-              color={theme.palette.primary.red}
-              hoverColor="common.white"
-            />
-            <LinkButton
-              href="https://www.linkedin.com/in/nader-ebrahim-28576b199/"
-              text="LinkedIn"
-              color={theme.palette.primary.red}
-              hoverColor="common.white"
-            />
-          </InlineContainer>
+          <Box>
+            <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
+              "CHAT BOT" HERE
+            </Typography>
+          </Box>
           {/* <Image
             src="/images/picOfMe.jpg"
             alt="Nader"

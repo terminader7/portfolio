@@ -15,6 +15,7 @@ import Image from "next/image";
 import Divider from "@mui/material/Divider";
 import ExperienceCard from "../components/ExperienceCard";
 import ProjectContainer from "../components/ProjectContainer";
+import ArrowRightIcon from "@mui/icons-material/ArrowRightAltRounded";
 
 // For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
 
@@ -216,13 +217,7 @@ export default function Home() {
           /> */}
         </Box>
       </InlineContainer>
-      <Box
-        display="flex"
-        flexDirection="column"
-        gap="1rem"
-        marginBottom="4rem"
-        height="45vh"
-      >
+      <Box display="flex" flexDirection="column" gap="1rem" marginBottom="4rem">
         <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
           Experience
         </Typography>
@@ -239,7 +234,7 @@ export default function Home() {
             timeWorked="Nov 2020 - Aug 2022"
             description={sinceraDescription}
           />
-          <Divider
+          {/* <Divider
             orientation="horizontal"
             flexItem
             sx={{
@@ -247,7 +242,8 @@ export default function Home() {
               width: "200px",
               alignSelf: "center",
             }}
-          />
+          /> */}
+          <ArrowRightIcon fontSize="large" sx={{ alignSelf: "center" }} />
           <ExperienceCard
             imageSrc={"/images/finli-logo.jpg"}
             companyName="Finli"
@@ -257,7 +253,7 @@ export default function Home() {
           />
         </InlineContainer>
       </Box>
-      <Box display="flex" flexDirection="column" gap="1rem">
+      <Box display="flex" flexDirection="column" gap="1rem" marginBottom="5rem">
         <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
           Projects
         </Typography>

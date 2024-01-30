@@ -4,7 +4,7 @@ import InlineContainer from "../components/InlineContainer";
 import LinkButton from "../components/LinkButton";
 import { useTheme } from "@mui/material";
 import MultiColorLine from "../components/MultiColorLine";
-import SkillChip from "../components/SkillChip";
+import StyledChip from "../components/StyledChip";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
@@ -14,6 +14,7 @@ import Card from "@mui/material/Card";
 import Image from "next/image";
 import Divider from "@mui/material/Divider";
 import ExperienceCard from "../components/ExperienceCard";
+import ProjectContainer from "../components/ProjectContainer";
 
 // For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
 
@@ -75,42 +76,42 @@ export default function Home() {
               Skillset
             </Typography>
             <InlineContainer gap=".5rem" width="70%" sx={{ flexWrap: "wrap" }}>
-              <SkillChip label="HTML" background={theme.palette.primary.red} />
-              <SkillChip label="CSS" background={theme.palette.primary.red} />
-              <SkillChip
+              <StyledChip label="HTML" background={theme.palette.primary.red} />
+              <StyledChip label="CSS" background={theme.palette.primary.red} />
+              <StyledChip
                 label="JavaScript"
                 background={theme.palette.primary.red}
               />
-              <SkillChip
+              <StyledChip
                 label="React"
                 background={theme.palette.primary.orange}
               />
-              <SkillChip
+              <StyledChip
                 label="Next.js"
                 background={theme.palette.primary.orange}
               />
-              <SkillChip
+              <StyledChip
                 label="TypeScript"
                 background={theme.palette.primary.orange}
               />{" "}
-              <SkillChip
+              <StyledChip
                 label="Material UI"
                 background={theme.palette.primary.yellow}
               />
-              <SkillChip
+              <StyledChip
                 label="Tailwind CSS"
                 background={theme.palette.primary.yellow}
               />
-              <SkillChip
+              <StyledChip
                 label="VSCode"
                 background={theme.palette.primary.green}
               />
-              <SkillChip
+              <StyledChip
                 label="Warp"
                 background={theme.palette.primary.green}
               />
-              <SkillChip label="Git" background={theme.palette.primary.blue} />
-              <SkillChip
+              <StyledChip label="Git" background={theme.palette.primary.blue} />
+              <StyledChip
                 label="Node.js"
                 background={theme.palette.primary.blue}
               />
@@ -192,15 +193,6 @@ export default function Home() {
           </Box>
         </Box>
         <Box display="flex" flexDirection="column" gap="1rem">
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            Thanks for stopping by, <br /> take a look around.
-          </Typography>
           <InlineContainer gap="2rem">
             <LinkButton
               href=""
@@ -275,12 +267,22 @@ export default function Home() {
             gap: "10rem",
           }}
         >
-          <Typography variant="h6" fontWeight={600}>
-            Hoops Hoopla
-          </Typography>
-          <Typography variant="h6" fontWeight={600}>
-            Github Finder
-          </Typography>
+          <ProjectContainer
+            projectImagePath=""
+            projectImageAlt=""
+            projectName="Hoops Hoopla"
+            projectDesc="Nba stat tracker app built using SQL, Next, and MUI"
+            dateCompleted="2024"
+            isWiP
+          />
+          <ProjectContainer
+            projectImagePath="/images/github-finder.jpg"
+            projectImageAlt="Image of github finder app"
+            projectName="Github Finder"
+            projectDesc="A simple React app that allows you to search for Github users and
+            view their profile and repos using React and Node.js."
+            dateCompleted="2021"
+          />
           <Typography variant="h6" fontWeight={600}>
             Contact Keeper
           </Typography>

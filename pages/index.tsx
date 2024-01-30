@@ -16,6 +16,7 @@ import Divider from "@mui/material/Divider";
 import ExperienceCard from "../components/ExperienceCard";
 import ProjectContainer from "../components/ProjectContainer";
 import ArrowRightIcon from "@mui/icons-material/ArrowRightAltRounded";
+import ResumeIcon from "@mui/icons-material/DescriptionRounded";
 
 // For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
 
@@ -125,25 +126,6 @@ export default function Home() {
             <InlineContainer gap="1rem">
               <IconButton
                 onClick={() => {
-                  window.open(
-                    "https://www.linkedin.com/in/nader-ebrahim-28576b199/"
-                  );
-                }}
-              >
-                <LinkedInIcon
-                  fontSize="large"
-                  sx={{
-                    color: "common.white",
-                    ":hover": {
-                      transition: "all .2s ease-in-out",
-                      transform: "scale(1.2)",
-                      color: theme.palette.primary.red,
-                    },
-                  }}
-                />
-              </IconButton>
-              <IconButton
-                onClick={() => {
                   window.open("https://github.com/terminader7");
                 }}
               >
@@ -154,6 +136,7 @@ export default function Home() {
                     ":hover": {
                       transition: "all .2s ease-in-out",
                       transform: "scale(1.2)",
+                      color: theme.palette.primary.red,
                     },
                   }}
                 />
@@ -170,6 +153,24 @@ export default function Home() {
                     ":hover": {
                       transition: "all .2s ease-in-out",
                       transform: "scale(1.2)",
+                      color: theme.palette.primary.orange,
+                    },
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => {
+                  window.open("https:localhost:3000/NaderEbrahim.pdf");
+                }}
+              >
+                <ResumeIcon
+                  fontSize="large"
+                  sx={{
+                    color: "common.white",
+                    ":hover": {
+                      transition: "all .2s ease-in-out",
+                      transform: "scale(1.2)",
+                      color: theme.palette.primary.yellow,
                     },
                   }}
                 />
@@ -186,6 +187,26 @@ export default function Home() {
                     ":hover": {
                       transition: "all .2s ease-in-out",
                       transform: "scale(1.2)",
+                      color: theme.palette.primary.green,
+                    },
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => {
+                  window.open(
+                    "https://www.linkedin.com/in/nader-ebrahim-28576b199/"
+                  );
+                }}
+              >
+                <LinkedInIcon
+                  fontSize="large"
+                  sx={{
+                    color: "common.white",
+                    ":hover": {
+                      transition: "all .2s ease-in-out",
+                      transform: "scale(1.2)",
+                      color: theme.palette.primary.blue,
                     },
                   }}
                 />

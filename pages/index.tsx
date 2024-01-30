@@ -37,7 +37,7 @@ export default function Home() {
   tasks when needed.`;
 
   return (
-    <Box paddingInline="5rem">
+    <Box paddingInline="10rem">
       <Head>
         <title>Naders Portfolio</title>
         <meta name="description" content="Nader's Portfolio" />

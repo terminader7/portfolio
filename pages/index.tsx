@@ -160,7 +160,7 @@ export default function Home() {
               </IconButton>
               <IconButton
                 onClick={() => {
-                  window.open("https:localhost:3000/NaderEbrahim.pdf");
+                  window.open("/NaderEbrahim.pdf");
                 }}
               >
                 <ResumeIcon

@@ -300,9 +300,13 @@ export default function Home() {
             view their profile and repos using React and Node.js."
             dateCompleted="2021"
           />
-          <Typography variant="h6" fontWeight={600}>
-            Contact Keeper
-          </Typography>
+          <ProjectContainer
+            projectImagePath="/images/contact-keeper.jpg"
+            projectImageAlt="Image of contact keeper app"
+            projectName="Contact Keeper"
+            projectDesc="Full stack MERN application for keeping track of contacts. Built with React, Node.js, Express, and MongoDB."
+            dateCompleted="2022"
+          />
         </InlineContainer>
       </Box>
     </Box>

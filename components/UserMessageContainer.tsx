@@ -1,10 +1,10 @@
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
-const MessageContainer = ({ messages }) => {
+const UserMessageContainer = ({ selectedMessages }) => {
   return (
     <>
-      {messages?.map((message, index) => (
+      {selectedMessages.map((message, index) => (
         <Paper
           key={index}
           elevation={3}
@@ -12,17 +12,17 @@ const MessageContainer = ({ messages }) => {
             maxWidth: "300px",
             padding: ".5rem",
             margin: ".25rem",
-            backgroundColor: "common.black",
-            color: "common.white",
+            backgroundColor: "common.white",
+            color: "common.black",
             borderRadius: "10px",
-            borderBottomLeftRadius: "0px",
+            borderBottomRightRadius: "0px",
           }}
         >
-          <Typography variant="body1">{message.text}</Typography>
+          <Typography variant="body1">{message}</Typography>
         </Paper>
       ))}
     </>
   );
 };
 
-export default MessageContainer;
+export default UserMessageContainer;

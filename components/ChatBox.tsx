@@ -1,68 +1,63 @@
 import Box from "@mui/material/Box";
 import MessageContainer from "./MessageContainer";
 import SelectUserMessageContainer from "./SelectUserMessageContainer";
+import UserMessageContainer from "./UserMessageContainer";
+import Button from "@mui/material/Button";
 import { useState } from "react";
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
   const responses = [
-    {
-      index: 0,
-      message: "Hello",
-    },
-    {
-      index: 1,
-      message: "Hello",
-    },
-    {
-      index: 2,
-      message: "Hello",
-    },
-    {
-      index: 3,
-      message: "Hello",
-    },
-    {
-      index: 4,
-      message: "Hello",
-    },
-    {
-      index: 5,
-      message: "Hello",
-    },
-    {
-      index: 6,
-      message: "Hello",
-    },
-    {
-      index: 7,
-      message: "Hello",
-    },
-    {
-      index: 8,
-      message: "Hello",
-    },
+    "Hello",
+    "Sure, I'd love to tell you about myself!",
+    "You can send a message by clicking the 'Send' button.",
   ];
 
-  const userMessages = [
-    {
-      index: 0,
-      message: "What are your hobbies?",
-    },
-    {
-      index: 1,
-      message: "Send a message",
-    },
-    {
-      index: 2,
-      message: "Tell me about yourself",
-    },
-  ];
+  const [selectedMessages, setSelectedMessages] = useState([]);
+
+  const handleUserMessageSelect = (selectedMessage) => {
+    const responseIndex = selectedMessages.length;
+    if (responseIndex !== -1) {
+      const response = responses[responseIndex];
+      setMessages([...messages, { text: selectedMessage, type: "user" }]);
+      setMessages([...messages, { text: response, type: "bot" }]);
+      setSelectedMessages([...selectedMessages, selectedMessage]);
+    }
+  };
+
+  const handleRestart = () => {
+    setMessages([]);
+    setSelectedMessages([]);
+  };
+
   return (
     <Box display="flex" flexDirection="column">
-      <MessageContainer />
-      <SelectUserMessageContainer />
+      <MessageContainer messages={messages} />
+      <UserMessageContainer selectedMessages={selectedMessages} />
+      <SelectUserMessageContainer
+        userMessages={selectedMessages}
+        onSelect={handleUserMessageSelect}
+      />
+      <Button
+        variant="outlined"
+        size="small"
+        onClick={handleRestart}
+        sx={{
+          color: "primary.red",
+          width: "100px",
+          borderColor: "primary.red",
+          borderRadius: "20px",
+          ":hover": {
+            backgroundColor: "primary.red",
+            color: "common.white",
+            borderColor: "primary.red",
+          },
+        }}
+      >
+        Restart
+      </Button>
     </Box>
   );
 };
+
 export default ChatBox;

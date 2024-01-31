@@ -14,8 +14,7 @@ import ExperienceCard from "../components/ExperienceCard";
 import ProjectContainer from "../components/ProjectContainer";
 import ArrowRightIcon from "@mui/icons-material/ArrowRightAltRounded";
 import ResumeIcon from "@mui/icons-material/DescriptionRounded";
-import MessageContainer from "../components/MessageContainer";
-import UserMessageContainer from "../components/UserMessageContainer";
+import ChatBox from "../components/ChatBox";
 
 // For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
 
@@ -218,10 +217,7 @@ export default function Home() {
             <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
               CHAT BOT HERE
             </Typography>
-            <Box display="flex" flexDirection="column">
-              <MessageContainer />
-              <UserMessageContainer />
-            </Box>
+            <ChatBox />
           </Box>
           {/* <Image
             src="/images/picOfMe.jpg"

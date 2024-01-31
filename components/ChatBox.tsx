@@ -52,6 +52,7 @@ const ChatBox = () => {
             color: "common.white",
             borderColor: "primary.red",
           },
+          alignSelf: "start",
         }}
       >
         Restart

@@ -10,7 +10,6 @@ function MyPortfolio({ Component, pageProps }) {
     () => createTheme(getThemeOptions(primaryColor, secondaryColor)),
     [primaryColor, secondaryColor]
   );
-  console.log({ primaryColor, secondaryColor });
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

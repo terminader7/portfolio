@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import InlineContainer from "../components/InlineContainer";
-import LinkButton from "../components/LinkButton";
 import { useTheme } from "@mui/material";
 import MultiColorLine from "../components/MultiColorLine";
 import StyledChip from "../components/StyledChip";
@@ -10,13 +9,13 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import IconButton from "@mui/material/IconButton";
-import Card from "@mui/material/Card";
 import Image from "next/image";
-import Divider from "@mui/material/Divider";
 import ExperienceCard from "../components/ExperienceCard";
 import ProjectContainer from "../components/ProjectContainer";
 import ArrowRightIcon from "@mui/icons-material/ArrowRightAltRounded";
 import ResumeIcon from "@mui/icons-material/DescriptionRounded";
+import MessageContainer from "../components/MessageContainer";
+import UserMessageContainer from "../components/UserMessageContainer";
 
 // For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
 
@@ -66,7 +65,7 @@ export default function Home() {
             <Typography variant="h3" sx={{ fontWeight: "bold" }}>
               Frontend Software Developer
             </Typography>
-            <MultiColorLine height={"20px"} width={"100%"} />
+            <MultiColorLine height={"15px"} width={"100%"} />
             <Typography variant="h6">
               I specialize in crafting visually appealing, seamlessly functional
               user interfaces and thrive on transforming abstract concepts into
@@ -217,8 +216,12 @@ export default function Home() {
         <Box display="flex" flexDirection="column" gap="1rem">
           <Box>
             <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
-              "CHAT BOT" HERE
+              CHAT BOT HERE
             </Typography>
+            <Box display="flex" flexDirection="column">
+              <MessageContainer />
+              <UserMessageContainer />
+            </Box>
           </Box>
           {/* <Image
             src="/images/picOfMe.jpg"
@@ -246,15 +249,6 @@ export default function Home() {
             timeWorked="Nov 2020 - Aug 2022"
             description={sinceraDescription}
           />
-          {/* <Divider
-            orientation="horizontal"
-            flexItem
-            sx={{
-              borderColor: "common.white",
-              width: "200px",
-              alignSelf: "center",
-            }}
-          /> */}
           <ArrowRightIcon fontSize="large" sx={{ alignSelf: "center" }} />
           <ExperienceCard
             imageSrc={"/images/finli-logo.jpg"}

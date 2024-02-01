@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import ResponseContainer from "./ResponseContainer";
 import SelectMessageContainer from "./SelectMessageContainer";
-import MessageContainer from "./MessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import RestartIcon from "@mui/icons-material/RestartAlt";
@@ -51,7 +50,6 @@ const ChatBox = () => {
   return (
     <Box display="flex" flexDirection="column">
       <ResponseContainer messages={messages} />
-      <MessageContainer selectedMessages={selectedMessages} />
       <SelectMessageContainer
         messages={messagesToSelect}
         onSelect={handleUserMessageSelect}

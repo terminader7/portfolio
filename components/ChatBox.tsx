@@ -9,19 +9,14 @@ import RestartIcon from "@mui/icons-material/RestartAlt";
 // For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
 
 const ChatBox = () => {
-  const responses = [
-    "Hello",
-    "Sure, I'd love to tell you about myself!",
-    "You can send a message by clicking the 'Send' button.",
-  ];
   const userMessages = [
-    "What are your hobbies",
+    "What are your hobbies?",
     "Tell me about yourself",
     "How do I send a message?",
   ];
 
   const responseMap = {
-    "What are your hobbies":
+    "What are your hobbies?":
       "I enjoy playing video games, basketball, and tabletop RPGs.",
     "Tell me about yourself": "I am a friendly bot designed to help users.",
     "How do I send a message?":
@@ -38,7 +33,10 @@ const ChatBox = () => {
     setMessages((prevMessages) => [
       ...prevMessages,
       { message, isUser: true },
-      { message: responseMap[message], isUser: false },
+      {
+        message: responseMap[message] || "I don't know the answer to that.",
+        isUser: false,
+      },
     ]);
     setMessagesToSelect((prevMessages) =>
       prevMessages.filter((msg) => msg !== message)
@@ -52,7 +50,7 @@ const ChatBox = () => {
 
   return (
     <Box display="flex" flexDirection="column">
-      <ResponseContainer messages={responses} />
+      <ResponseContainer messages={messages} />
       <MessageContainer selectedMessages={selectedMessages} />
       <SelectMessageContainer
         messages={messagesToSelect}

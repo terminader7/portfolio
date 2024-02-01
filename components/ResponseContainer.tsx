@@ -1,6 +1,5 @@
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-
 const ResponseContainer = ({ messages }) => {
   return (
     <>
@@ -12,13 +11,13 @@ const ResponseContainer = ({ messages }) => {
             maxWidth: "300px",
             padding: ".5rem",
             margin: ".25rem",
-            backgroundColor: "common.black",
-            color: "common.white",
+            backgroundColor: message.isUser ? "common.white" : "common.black",
+            color: message.isUser ? "common.black" : "common.white",
             borderRadius: "10px",
-            borderBottomLeftRadius: "0px",
+            borderBottomRightRadius: message.isUser ? "0px" : "10px",
           }}
         >
-          <Typography variant="body1">{message.text}</Typography>
+          <Typography variant="body1">{message.message}</Typography>
         </Paper>
       ))}
     </>

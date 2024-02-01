@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import ResponseContainer from "./ResponseContainer";
-import SelectUserMessageContainer from "./SelectUserMessageContainer";
-import UserMessageContainer from "./UserMessageContainer";
+import SelectMessageContainer from "./SelectMessageContainer";
+import MessageContainer from "./MessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import RestartIcon from "@mui/icons-material/RestartAlt";
@@ -21,35 +21,32 @@ const ChatBox = () => {
   ];
 
   const [messages, setMessages] = useState([]);
+  ``;
+  const [messagesToSelect, setMessagesToSelect] = useState(userMessages);
 
-  const [selectedMessages, setSelectedMessages] = useState([]);
+  const selectedMessages = messages.filter((message) => message.isUser);
 
   const handleUserMessageSelect = (message) => {
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: message, sender: "user" },
-    ]);
-    setSelectedMessages((prevSelectedMessages) =>
-      prevSelectedMessages.filter(
-        (selectedMessage) => selectedMessage !== message
-      )
+    setMessages((prevMessages) => [...prevMessages, { message, isUser: true }]);
+    setMessagesToSelect((prevMessages) =>
+      prevMessages.filter((msg) => msg !== message)
     );
   };
 
-  const handleRestart = () => {
-    setMessages([]);
-    setSelectedMessages([]);
-  };
+  // const handleRestart = () => {
+  //   setMessages([]);
+  //   setMessagesToSelect([]);
+  // };
 
   return (
     <Box display="flex" flexDirection="column">
-      <ResponseContainer messages={messages} />
-      <UserMessageContainer selectedMessages={selectedMessages} />
-      <SelectUserMessageContainer
-        userMessages={selectedMessages}
+      <ResponseContainer messages={responses} />
+      <MessageContainer selectedMessages={selectedMessages} />
+      <SelectMessageContainer
+        messages={messagesToSelect}
         onSelect={handleUserMessageSelect}
       />
-      <Button
+      {/* <Button
         variant="text"
         size="small"
         onClick={handleRestart}
@@ -67,7 +64,7 @@ const ChatBox = () => {
         }}
       >
         Restart
-      </Button>
+      </Button> */}
     </Box>
   );
 };

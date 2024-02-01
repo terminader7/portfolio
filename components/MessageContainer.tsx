@@ -1,7 +1,7 @@
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
-const UserMessageContainer = ({ selectedMessages }) => {
+const MessageContainer = ({ selectedMessages }) => {
   return (
     <>
       {selectedMessages.map((message, index) => (
@@ -25,4 +25,4 @@ const UserMessageContainer = ({ selectedMessages }) => {
   );
 };
 
-export default UserMessageContainer;
+export default MessageContainer;

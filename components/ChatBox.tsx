@@ -20,6 +20,14 @@ const ChatBox = () => {
     "How do I send a message?",
   ];
 
+  const responseMap = {
+    "What are your hobbies":
+      "I enjoy playing video games, basketball, and tabletop RPGs.",
+    "Tell me about yourself": "I am a friendly bot designed to help users.",
+    "How do I send a message?":
+      "You can type your message in the input field and click the 'Send' button.",
+  };
+
   const [messages, setMessages] = useState([]);
   ``;
   const [messagesToSelect, setMessagesToSelect] = useState(userMessages);
@@ -27,16 +35,20 @@ const ChatBox = () => {
   const selectedMessages = messages.filter((message) => message.isUser);
 
   const handleUserMessageSelect = (message) => {
-    setMessages((prevMessages) => [...prevMessages, { message, isUser: true }]);
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { message, isUser: true },
+      { message: responseMap[message], isUser: false },
+    ]);
     setMessagesToSelect((prevMessages) =>
       prevMessages.filter((msg) => msg !== message)
     );
   };
 
-  // const handleRestart = () => {
-  //   setMessages([]);
-  //   setMessagesToSelect([]);
-  // };
+  const handleRestart = () => {
+    setMessages([]);
+    setMessagesToSelect([...userMessages]);
+  };
 
   return (
     <Box display="flex" flexDirection="column">
@@ -46,7 +58,7 @@ const ChatBox = () => {
         messages={messagesToSelect}
         onSelect={handleUserMessageSelect}
       />
-      {/* <Button
+      <Button
         variant="text"
         size="small"
         onClick={handleRestart}
@@ -64,7 +76,7 @@ const ChatBox = () => {
         }}
       >
         Restart
-      </Button> */}
+      </Button>
     </Box>
   );
 };

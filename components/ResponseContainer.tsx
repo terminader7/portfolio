@@ -1,7 +1,7 @@
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
-const MessageContainer = ({ messages }) => {
+const ResponseContainer = ({ messages }) => {
   return (
     <>
       {messages?.map((message, index) => (
@@ -25,4 +25,4 @@ const MessageContainer = ({ messages }) => {
   );
 };
 
-export default MessageContainer;
+export default ResponseContainer;

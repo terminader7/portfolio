@@ -5,6 +5,8 @@ import UserMessageContainer from "./UserMessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 
+// For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
+
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
   const responses = [

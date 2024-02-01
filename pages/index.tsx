@@ -16,8 +16,6 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRightAltRounded";
 import ResumeIcon from "@mui/icons-material/DescriptionRounded";
 import ChatBox from "../components/ChatBox";
 
-// For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
-
 export default function Home() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));

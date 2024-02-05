@@ -16,9 +16,9 @@ const ChatBox = () => {
 
   const responseMap = {
     "What are your hobbies?":
-      "I enjoy playing video games, basketball, and tabletop RPGs.",
+      "When I'm not working I'm either watching basketball, spending time with my family or playing video games. I also enjoy cooking and weightlifting.",
     "Tell me about yourself":
-      "I'm Nader. I'm a software engineer with about 4 years of professional experience! I'm currently working on some projects, this one included.",
+      "I'm a software engineer with about 4 years of professional experience. I'm currently working on some projects, this one included.",
     "How do I send a message?":
       "You can type your message in the input field and click the 'Send' button.",
   };

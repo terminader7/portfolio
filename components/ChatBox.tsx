@@ -17,16 +17,17 @@ const ChatBox = () => {
   const responseMap = {
     "What are your hobbies?":
       "I enjoy playing video games, basketball, and tabletop RPGs.",
-    "Tell me about yourself": "I am a friendly bot designed to help users.",
+    "Tell me about yourself":
+      "I'm Nader. I'm a software engineer with about 4 years of professional experience! I'm currently working on some projects, this one included.",
     "How do I send a message?":
       "You can type your message in the input field and click the 'Send' button.",
   };
 
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    { message: "Hello! How can I help you today?", isUser: false },
+  ]);
   ``;
   const [messagesToSelect, setMessagesToSelect] = useState(userMessages);
-
-  const selectedMessages = messages.filter((message) => message.isUser);
 
   const handleUserMessageSelect = (message) => {
     setMessages((prevMessages) => [
@@ -43,7 +44,9 @@ const ChatBox = () => {
   };
 
   const handleRestart = () => {
-    setMessages([]);
+    setMessages([
+      { message: "Hello! How can I help you today?", isUser: false },
+    ]);
     setMessagesToSelect([...userMessages]);
   };
 

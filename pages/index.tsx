@@ -271,7 +271,7 @@ export default function Home() {
         <InlineContainer
           sx={{
             flexDirection: isMobile ? "column" : "row",
-            gap: "10rem",
+            gap: { xs: "5rem", md: "10rem" },
           }}
         >
           <ProjectContainer

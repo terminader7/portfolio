@@ -21,14 +21,26 @@ const ProjectContainer = ({
   isWiP?: boolean;
 }) => {
   const theme = useTheme();
+  const isMobile = useTheme();
   return (
-    <Box display="flex" flexDirection="column" gap=".5rem" width="20rem">
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: ".5rem",
+        width: { xs: "100%", md: "20rem" },
+        alignItems: { xs: "center", md: "start" },
+        textAlign: { xs: "center", md: "start" },
+      }}
+    >
       <Image
         src={projectImagePath}
         alt={projectImageAlt}
         width={300}
         height={150}
-        style={{ borderRadius: "10px" }}
+        style={{
+          borderRadius: "10px",
+        }}
       />
       <Typography variant="h6" fontWeight={600}>
         {projectName}

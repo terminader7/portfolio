@@ -3,9 +3,7 @@ import ResponseContainer from "./ResponseContainer";
 import SelectMessageContainer from "./SelectMessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import RestartIcon from "@mui/icons-material/RestartAlt";
-
-// For hobbies put gaming, basketball, and TTRPG, weightlifting, and cooking
+import InlineContainer from "./InlineContainer";
 
 const ChatBox = () => {
   const userMessages = [
@@ -28,6 +26,7 @@ const ChatBox = () => {
   ]);
   ``;
   const [messagesToSelect, setMessagesToSelect] = useState(userMessages);
+  const [hasSelectedMessage, setHasSelectedMessage] = useState(false);
 
   const handleUserMessageSelect = (message) => {
     setMessages((prevMessages) => [
@@ -41,6 +40,7 @@ const ChatBox = () => {
     setMessagesToSelect((prevMessages) =>
       prevMessages.filter((msg) => msg !== message)
     );
+    setHasSelectedMessage(true);
   };
 
   const handleRestart = () => {
@@ -48,34 +48,39 @@ const ChatBox = () => {
       { message: "Hello! How can I help you today?", isUser: false },
     ]);
     setMessagesToSelect([...userMessages]);
+    setHasSelectedMessage(false);
   };
 
   return (
-    <Box display="flex" flexDirection="column">
+    <Box display="flex" flexDirection="column" alignItems="center">
       <ResponseContainer messages={messages} />
-      <SelectMessageContainer
-        messages={messagesToSelect}
-        onSelect={handleUserMessageSelect}
-      />
-      <Button
-        variant="text"
-        size="small"
-        onClick={handleRestart}
-        sx={{
-          color: "primary.red",
-          width: "100px",
-          borderColor: "primary.red",
-          borderRadius: "20px",
-          ":hover": {
-            backgroundColor: "primary.red",
-            color: "common.white",
+      <InlineContainer width="70%">
+        <SelectMessageContainer
+          messages={messagesToSelect}
+          onSelect={handleUserMessageSelect}
+        />
+      </InlineContainer>
+      {hasSelectedMessage && (
+        <Button
+          variant="text"
+          size="small"
+          onClick={handleRestart}
+          sx={{
+            color: "primary.red",
+            width: "100px",
             borderColor: "primary.red",
-          },
-          alignSelf: "start",
-        }}
-      >
-        Restart
-      </Button>
+            borderRadius: "20px",
+            ":hover": {
+              backgroundColor: "primary.red",
+              color: "common.white",
+              borderColor: "primary.red",
+            },
+            alignSelf: "start",
+          }}
+        >
+          Restart
+        </Button>
+      )}
     </Box>
   );
 };

@@ -212,18 +212,8 @@ export default function Home() {
         </Box>
         <Box display="flex" flexDirection="column" gap="1rem">
           <Box>
-            <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
-              CHAT BOT HERE
-            </Typography>
             <ChatBox />
           </Box>
-          {/* <Image
-            src="/images/picOfMe.jpg"
-            alt="Nader"
-            width={200}
-            height={200}
-            style={{ borderRadius: "20px" }}
-          /> */}
         </Box>
       </InlineContainer>
       <Box display="flex" flexDirection="column" gap="1rem" marginBottom="4rem">

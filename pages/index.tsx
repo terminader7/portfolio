@@ -12,9 +12,10 @@ import IconButton from "@mui/material/IconButton";
 import Image from "next/image";
 import ExperienceCard from "../components/ExperienceCard";
 import ProjectContainer from "../components/ProjectContainer";
-import ArrowRightIcon from "@mui/icons-material/ArrowRightAltRounded";
+import ArrowIcon from "@mui/icons-material/ArrowRightAltRounded";
 import ResumeIcon from "@mui/icons-material/DescriptionRounded";
 import ChatBox from "../components/ChatBox";
+import Skillset from "../components/Skillset";
 
 export default function Home() {
   const theme = useTheme();
@@ -33,7 +34,13 @@ export default function Home() {
   tasks when needed.`;
 
   return (
-    <Box paddingInline="10rem">
+    <Box
+      sx={{
+        paddingInline: isMobile ? "0" : "10rem",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Head>
         <title>Naders Portfolio</title>
         <meta name="description" content="Nader's Portfolio" />
@@ -42,27 +49,48 @@ export default function Home() {
       <InlineContainer
         sx={{
           width: "100%",
-          justifyContent: "space-between",
+          justifyContent: { xs: "center", md: "space-between" },
           alignItems: "center",
           height: "100vh",
+          flexDirection: { xs: "column-reverse", md: "row" },
+          marginTop: { xs: "5rem", md: "0" },
+          marginBottom: { xs: "5rem", md: "0" },
         }}
       >
-        <Box display="flex" gap="2rem" flexDirection="column" width="40%">
-          <Box display="flex" flexDirection="column" gap="1rem">
+        <Box
+          sx={{
+            display: "flex",
+            width: { xs: "100%", md: "40%" },
+            gap: "2rem",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              textAlign: { xs: "center", md: "start" },
+              flexDirection: "column",
+              gap: "1rem",
+            }}
+          >
             <Typography
               variant="h5"
-              textAlign="center"
               sx={{
                 fontWeight: "bold",
-                textAlign: "start",
               }}
             >
               Nader Ebrahim
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: "bold" }}>
+            <Typography
+              variant={isMobile ? "h4" : "h3"}
+              sx={{ fontWeight: "bold" }}
+            >
               Frontend Software Developer
             </Typography>
-            <MultiColorLine height={"15px"} width={"100%"} />
+            <Box sx={{ paddingInline: { xs: "1rem", md: "0" } }}>
+              <MultiColorLine height={"15px"} width={"100%"} />
+            </Box>
             <Typography variant="h6">
               I specialize in crafting visually appealing, seamlessly functional
               user interfaces and thrive on transforming abstract concepts into
@@ -70,52 +98,23 @@ export default function Home() {
             </Typography>
           </Box>
           <Box>
-            <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
+            <Typography
+              variant="h4"
+              fontWeight={600}
+              marginBottom=".5rem"
+              sx={{ textAlign: { xs: "center", md: "start" } }}
+            >
               Skillset
             </Typography>
-            <InlineContainer gap=".5rem" width="70%" sx={{ flexWrap: "wrap" }}>
-              <StyledChip label="HTML" background={theme.palette.primary.red} />
-              <StyledChip label="CSS" background={theme.palette.primary.red} />
-              <StyledChip
-                label="JavaScript"
-                background={theme.palette.primary.red}
-              />
-              <StyledChip
-                label="React"
-                background={theme.palette.primary.orange}
-              />
-              <StyledChip
-                label="Next.js"
-                background={theme.palette.primary.orange}
-              />
-              <StyledChip
-                label="TypeScript"
-                background={theme.palette.primary.orange}
-              />{" "}
-              <StyledChip
-                label="Material UI"
-                background={theme.palette.primary.yellow}
-              />
-              <StyledChip
-                label="Tailwind CSS"
-                background={theme.palette.primary.yellow}
-              />
-              <StyledChip
-                label="VSCode"
-                background={theme.palette.primary.green}
-              />
-              <StyledChip
-                label="Warp"
-                background={theme.palette.primary.green}
-              />
-              <StyledChip label="Git" background={theme.palette.primary.blue} />
-              <StyledChip
-                label="Node.js"
-                background={theme.palette.primary.blue}
-              />
-            </InlineContainer>
+            <Skillset />
           </Box>
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: { xs: "center", md: "start" },
+            }}
+          >
             <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
               Get In Touch
             </Typography>
@@ -210,14 +209,24 @@ export default function Home() {
             </InlineContainer>
           </Box>
         </Box>
-        <Box display="flex" flexDirection="column" gap="1rem">
-          <Box>
-            <ChatBox />
-          </Box>
+        <Box
+          sx={{
+            display: "flex",
+            width: { xs: "100%", md: "40%" },
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          <ChatBox />
         </Box>
       </InlineContainer>
       <Box display="flex" flexDirection="column" gap="1rem" marginBottom="4rem">
-        <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
+        <Typography
+          variant="h4"
+          fontWeight={600}
+          marginBottom=".5rem"
+          sx={{ textAlign: { xs: "center", md: "start" } }}
+        >
           Experience
         </Typography>
         <InlineContainer
@@ -233,7 +242,14 @@ export default function Home() {
             timeWorked="Nov 2020 - Aug 2022"
             description={sinceraDescription}
           />
-          <ArrowRightIcon fontSize="large" sx={{ alignSelf: "center" }} />
+          {isMobile ? (
+            <ArrowIcon
+              fontSize="large"
+              sx={{ alignSelf: "center", rotate: "90deg" }}
+            />
+          ) : (
+            <ArrowIcon fontSize="large" sx={{ alignSelf: "center" }} />
+          )}
           <ExperienceCard
             imageSrc={"/images/finli-logo.jpg"}
             companyName="Finli"
@@ -244,7 +260,12 @@ export default function Home() {
         </InlineContainer>
       </Box>
       <Box display="flex" flexDirection="column" gap="1rem" marginBottom="5rem">
-        <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
+        <Typography
+          variant="h4"
+          fontWeight={600}
+          marginBottom=".5rem"
+          sx={{ textAlign: { xs: "center", md: "start" } }}
+        >
           Projects
         </Typography>
         <InlineContainer

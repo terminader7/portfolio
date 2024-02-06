@@ -25,7 +25,6 @@ const ExperienceCard = ({
   const handleToggle = () => {
     setIsDescriptionVisible(!isDescriptionVisible);
   };
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Card
       onClick={handleToggle}
@@ -35,7 +34,7 @@ const ExperienceCard = ({
         flexDirection: "row",
         padding: "1rem",
         gap: "1rem",
-        width: "500px",
+        width: { xs: "100%", md: "500px" },
         maxHeight: isDescriptionVisible ? "30rem" : "10rem",
         overflow: "hidden",
         transition: "max-height .8s ease-in-out",

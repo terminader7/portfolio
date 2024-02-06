@@ -52,7 +52,12 @@ const ChatBox = () => {
   };
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center">
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      sx={{ backgroundColor: "green" }}
+    >
       <ResponseContainer messages={messages} />
       <InlineContainer width="70%">
         <SelectMessageContainer

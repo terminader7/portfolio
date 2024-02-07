@@ -3,7 +3,6 @@ import MessageContainer from "./MessageContainer";
 import SelectMessageContainer from "./SelectMessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import InlineContainer from "./InlineContainer";
 
 const ChatBox = () => {
   const userMessages = [
@@ -52,7 +51,7 @@ const ChatBox = () => {
   };
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center">
+    <Box display="flex" flexDirection="column" gap="2rem">
       <MessageContainer messages={messages} />
       <SelectMessageContainer
         messages={messagesToSelect}

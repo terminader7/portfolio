@@ -213,9 +213,8 @@ export default function Home() {
         <Box
           sx={{
             display: "flex",
-            width: { xs: "100%", md: "40%" },
+            width: { xs: "90%", md: "30%" },
             flexDirection: "column",
-            gap: "1rem",
           }}
         >
           <ChatBox />

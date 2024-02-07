@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import ResponseContainer from "./ResponseContainer";
+import MessageContainer from "./MessageContainer";
 import SelectMessageContainer from "./SelectMessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
@@ -52,19 +52,12 @@ const ChatBox = () => {
   };
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      sx={{ backgroundColor: "green" }}
-    >
-      <ResponseContainer messages={messages} />
-      <InlineContainer width="70%">
-        <SelectMessageContainer
-          messages={messagesToSelect}
-          onSelect={handleUserMessageSelect}
-        />
-      </InlineContainer>
+    <Box display="flex" flexDirection="column" alignItems="center">
+      <MessageContainer messages={messages} />
+      <SelectMessageContainer
+        messages={messagesToSelect}
+        onSelect={handleUserMessageSelect}
+      />
       {hasSelectedMessage && (
         <Button
           variant="text"

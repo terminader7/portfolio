@@ -1,9 +1,16 @@
 import { Button } from "@mui/material";
-import Box from "@mui/material/Box";
+import InlineContainer from "./InlineContainer";
 
 const SelectMessageContainer = ({ messages, onSelect }) => {
   return (
-    <Box>
+    <InlineContainer
+      sx={{
+        alignSelf: "flex-end",
+        flexWrap: "wrap",
+        width: "60%",
+        justifyContent: "flex-end",
+      }}
+    >
       {messages?.map((message, index) => (
         <>
           <Button
@@ -16,20 +23,21 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
               borderColor: "common.white",
               borderRadius: "20px",
               margin: ".25rem",
-              height: "25px",
+              height: "fit-content",
               fontSize: ".75rem",
               ":hover": {
                 backgroundColor: "common.white",
                 color: "common.black",
                 borderColor: "common.white",
               },
+              width: "fit-content",
             }}
           >
             {message}
           </Button>
         </>
       ))}
-    </Box>
+    </InlineContainer>
   );
 };
 

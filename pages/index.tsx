@@ -300,7 +300,7 @@ export default function Home() {
           />
         </InlineContainer>
       </Box>
-      <Box>
+      <Box marginBottom="1rem">
         <Typography variant="body1" textAlign="center">
           <CopyrightIcon fontSize="small" sx={{ height: "1rem" }} /> 2024 Nader
           Ebrahim

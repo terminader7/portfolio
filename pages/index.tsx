@@ -53,8 +53,9 @@ export default function Home() {
           alignItems: "center",
           height: "100vh",
           flexDirection: { xs: "column-reverse", md: "row" },
-          marginTop: { xs: "5rem", md: "0" },
+          marginTop: { xs: "3rem", md: "0" },
           marginBottom: { xs: "5rem", md: "0" },
+          gap: { xs: "2rem", md: "0" },
         }}
       >
         <Box

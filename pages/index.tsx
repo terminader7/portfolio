@@ -16,6 +16,7 @@ import ArrowIcon from "@mui/icons-material/ArrowRightAltRounded";
 import ResumeIcon from "@mui/icons-material/DescriptionRounded";
 import ChatBox from "../components/ChatBox";
 import Skillset from "../components/Skillset";
+import CopyrightIcon from "@mui/icons-material/CopyrightRounded";
 
 export default function Home() {
   const theme = useTheme();
@@ -298,6 +299,19 @@ export default function Home() {
             dateCompleted="2022"
           />
         </InlineContainer>
+      </Box>
+      <Box>
+        <Typography variant="body1" textAlign="center">
+          <CopyrightIcon fontSize="small" sx={{ height: "1rem" }} /> 2024 Nader
+          Ebrahim
+        </Typography>
+        <Typography
+          variant="body1"
+          textAlign="center"
+          color={theme.palette.grey[500]}
+        >
+          Built with Next.js and Material UI.
+        </Typography>
       </Box>
     </Box>
   );

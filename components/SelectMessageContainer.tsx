@@ -7,7 +7,7 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
       sx={{
         alignSelf: "flex-end",
         flexWrap: "wrap",
-        width: "100%",
+        width: "80%",
         justifyContent: "flex-end",
       }}
     >

@@ -3,6 +3,7 @@ import MessageContainer from "./MessageContainer";
 import SelectMessageContainer from "./SelectMessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
+import EmailBox from "./EmailBox";
 
 const ChatBox = () => {
   const userMessages = [
@@ -17,7 +18,7 @@ const ChatBox = () => {
     "Tell me about yourself":
       "I'm a software engineer with about 4 years of professional experience. I'm currently working on some projects, this one included.",
     "How do I send a message?":
-      "You can type your message in the input field and click the 'Send' button.",
+      "Just type your message below, and I'll respond as soon as I can.",
   };
 
   const [messages, setMessages] = useState([
@@ -26,8 +27,12 @@ const ChatBox = () => {
   ``;
   const [messagesToSelect, setMessagesToSelect] = useState(userMessages);
   const [hasSelectedMessage, setHasSelectedMessage] = useState(false);
+  const [showTextBox, setShowTextBox] = useState(false);
 
   const handleUserMessageSelect = (message) => {
+    if (message === "How do I send a message?") {
+      setShowTextBox(true);
+    }
     setMessages((prevMessages) => [
       ...prevMessages,
       { message, isUser: true },
@@ -48,6 +53,7 @@ const ChatBox = () => {
     ]);
     setMessagesToSelect([...userMessages]);
     setHasSelectedMessage(false);
+    setShowTextBox(false);
   };
 
   return (
@@ -57,6 +63,7 @@ const ChatBox = () => {
         messages={messagesToSelect}
         onSelect={handleUserMessageSelect}
       />
+      {showTextBox && <EmailBox />}
       {hasSelectedMessage && (
         <Button
           variant="text"

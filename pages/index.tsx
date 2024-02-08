@@ -301,10 +301,17 @@ export default function Home() {
         </InlineContainer>
       </Box>
       <Box marginBottom="1rem">
-        <Typography variant="body1" textAlign="center">
-          <CopyrightIcon fontSize="small" sx={{ height: "1rem" }} /> 2024 Nader
-          Ebrahim
-        </Typography>
+        <InlineContainer
+          sx={{
+            justifyContent: "center",
+            gap: ".25rem",
+          }}
+        >
+          <CopyrightIcon fontSize="small" />
+          <Typography variant="body1" textAlign="center">
+            2024 Nader Ebrahim
+          </Typography>
+        </InlineContainer>
         <Typography
           variant="body1"
           textAlign="center"

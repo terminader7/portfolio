@@ -57,7 +57,7 @@ const ChatBox = () => {
   };
 
   return (
-    <Box display="flex" flexDirection="column" gap="2rem">
+    <Box display="flex" flexDirection="column" gap="2rem" alignItems="center">
       <MessageContainer messages={messages} />
       <SelectMessageContainer
         messages={messagesToSelect}

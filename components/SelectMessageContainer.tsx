@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import InlineContainer from "./InlineContainer";
 
 const SelectMessageContainer = ({ messages, onSelect }) => {
@@ -12,9 +12,8 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
       }}
     >
       {messages?.map((message, index) => (
-        <>
+        <Box key={index}>
           <Button
-            key={index}
             variant="outlined"
             size="small"
             onClick={() => onSelect(message)}
@@ -35,7 +34,7 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
           >
             {message}
           </Button>
-        </>
+        </Box>
       ))}
     </InlineContainer>
   );

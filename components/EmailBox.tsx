@@ -59,13 +59,22 @@ const EmailBox = () => {
         value={message}
         onChange={handleMessageChange}
       />
+      <Typography
+        variant="body2"
+        sx={{
+          color: "grey.500",
+          textAlign: "start",
+        }}
+      >
+        {message?.length ?? 0} / {maxMessageLength}
+      </Typography>
       <Button
         variant="contained"
         size="small"
         endIcon={<SendIcon fontSize="small" />}
         sx={{
           backgroundColor: "common.white",
-          ":hover": { backgroundColor: "common.white" },
+          ":hover": { backgroundColor: "primary.green", color: "common.white" },
           width: "fit-content",
           fontWeight: "bold",
           alignSelf: "flex-end",
@@ -74,20 +83,6 @@ const EmailBox = () => {
       >
         Send
       </Button>
-      <Typography
-        variant="body2"
-        sx={{
-          color:
-            (message?.length ?? 0) > maxMessageLength
-              ? "error.dark"
-              : "grey.600",
-          display: "block",
-          margin: "0.5rem 0 0 0",
-          textAlign: "right",
-        }}
-      >
-        {message?.length ?? 0} / {maxMessageLength}
-      </Typography>
     </Box>
   );
 };

@@ -9,20 +9,22 @@ const ChatBox = () => {
   const userMessages = [
     "What are your hobbies?",
     "Tell me about yourself",
-    "How do I send a message?",
+    "I'd like to send a message",
   ];
+
+  const defaultFirstMessage = "Hello! How can I help you today?";
 
   const responseMap = {
     "What are your hobbies?":
-      "When I'm not working I'm either watching basketball, spending time with my family or playing video games. I also enjoy cooking and weightlifting.",
+      "When I'm not working I'm either watching basketball, spending time with friends and family, or playing video games. I also enjoy cooking and weightlifting.",
     "Tell me about yourself":
       "I'm a software engineer with about 4 years of professional experience. I'm currently working on some projects, this one included.",
-    "How do I send a message?":
+    "I'd like to send a message":
       "Just type your message below, and I'll respond as soon as I can.",
   };
 
   const [messages, setMessages] = useState([
-    { message: "Hello! How can I help you today?", isUser: false },
+    { message: defaultFirstMessage, isUser: false },
   ]);
   ``;
   const [messagesToSelect, setMessagesToSelect] = useState(userMessages);
@@ -30,7 +32,7 @@ const ChatBox = () => {
   const [showTextBox, setShowTextBox] = useState(false);
 
   const handleUserMessageSelect = (message) => {
-    if (message === "How do I send a message?") {
+    if (message === "I'd like to send a message") {
       setShowTextBox(true);
     }
     setMessages((prevMessages) => [
@@ -48,9 +50,7 @@ const ChatBox = () => {
   };
 
   const handleRestart = () => {
-    setMessages([
-      { message: "Hello! How can I help you today?", isUser: false },
-    ]);
+    setMessages([{ message: defaultFirstMessage, isUser: false }]);
     setMessagesToSelect([...userMessages]);
     setHasSelectedMessage(false);
     setShowTextBox(false);

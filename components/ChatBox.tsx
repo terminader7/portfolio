@@ -59,14 +59,15 @@ const ChatBox = () => {
   return (
     <Box display="flex" flexDirection="column" gap="2rem">
       <MessageContainer messages={messages} />
-      <SelectMessageContainer
-        messages={messagesToSelect}
-        onSelect={handleUserMessageSelect}
-      />
-      {showTextBox && (
+      {showTextBox ? (
         <Box display="flex" justifyContent="center">
           <EmailBox />
         </Box>
+      ) : (
+        <SelectMessageContainer
+          messages={messagesToSelect}
+          onSelect={handleUserMessageSelect}
+        />
       )}
       {hasSelectedMessage && (
         <Button

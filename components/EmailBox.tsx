@@ -3,10 +3,12 @@ import TextField from "./TextField";
 import SendIcon from "@mui/icons-material/SendRounded";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { useSnackbar } from "notistack";
 
 const EmailBox = () => {
   const [userEmail, setUserEmail] = useState("");
   const [message, setMessage] = useState("");
+  const { enqueueSnackbar } = useSnackbar();
 
   const maxMessageLength = 400;
 
@@ -34,10 +36,12 @@ const EmailBox = () => {
       )
       .then(
         (result) => {
-          console.log("Email sent successfully", result.text);
+          enqueueSnackbar("Email sent successfully", { variant: "success" });
+          console.log(result.text);
         },
         (error) => {
-          console.log("Error sending email", error.text);
+          enqueueSnackbar("Error sending email", { variant: "error" });
+          console.log(error.text);
         }
       );
 
@@ -78,6 +82,7 @@ const EmailBox = () => {
           width: "fit-content",
           fontWeight: "bold",
           alignSelf: "flex-end",
+          fontSize: "body2.fontSize",
         }}
         onClick={handleSubmit}
       >

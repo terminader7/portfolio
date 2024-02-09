@@ -6,11 +6,11 @@ import { useState } from "react";
 import EmailBox from "./EmailBox";
 
 const ChatBox = () => {
-  const userMessages = [
-    "What are your hobbies?",
-    "Tell me about yourself",
-    "I'd like to send a message",
-  ];
+  const userMessagesMap = {
+    hobbies: "What are your hobbies?",
+    about: "Tell me about yourself",
+    sendMessage: "I'd like to send a message",
+  };
 
   const defaultFirstMessage = "Hello! How can I help you today?";
 
@@ -20,19 +20,23 @@ const ChatBox = () => {
     "Tell me about yourself":
       "I'm a software engineer with about 4 years of professional experience. I'm currently working on some projects, this one included.",
     "I'd like to send a message":
-      "Just type your message below, and I'll respond as soon as I can.",
+      "Perfect! Just type your message below, and I'll respond as soon as I can.",
   };
 
   const [messages, setMessages] = useState([
     { message: defaultFirstMessage, isUser: false },
   ]);
   ``;
-  const [messagesToSelect, setMessagesToSelect] = useState(userMessages);
+  const [messagesToSelect, setMessagesToSelect] = useState([
+    userMessagesMap.hobbies,
+    userMessagesMap.about,
+    userMessagesMap.sendMessage,
+  ]);
   const [hasSelectedMessage, setHasSelectedMessage] = useState(false);
   const [showTextBox, setShowTextBox] = useState(false);
 
   const handleUserMessageSelect = (message) => {
-    if (message === "I'd like to send a message") {
+    if (message === userMessagesMap.sendMessage) {
       setShowTextBox(true);
     }
     setMessages((prevMessages) => [
@@ -51,7 +55,11 @@ const ChatBox = () => {
 
   const handleRestart = () => {
     setMessages([{ message: defaultFirstMessage, isUser: false }]);
-    setMessagesToSelect([...userMessages]);
+    setMessagesToSelect([
+      userMessagesMap.hobbies,
+      userMessagesMap.about,
+      userMessagesMap.sendMessage,
+    ]);
     setHasSelectedMessage(false);
     setShowTextBox(false);
   };

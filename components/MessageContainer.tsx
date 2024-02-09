@@ -15,7 +15,9 @@ const MessageContainer = ({ messages }) => {
               width: "fit-content",
               padding: ".5rem",
               margin: ".25rem",
-              backgroundColor: message.isUser ? "common.white" : "common.black",
+              backgroundColor: message.isUser
+                ? "common.white"
+                : "primary.green",
               color: message.isUser ? "common.black" : "common.white",
               borderRadius: "10px",
               borderBottomRightRadius: message.isUser ? "0px" : "10px",

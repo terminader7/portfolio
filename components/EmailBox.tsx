@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import TextField from "./TextField";
 import SendIcon from "@mui/icons-material/SendRounded";
 import { useState } from "react";
@@ -7,6 +7,15 @@ import emailjs from "emailjs-com";
 const EmailBox = () => {
   const [userEmail, setUserEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const maxMessageLength = 400;
+
+  const handleMessageChange = (e) => {
+    const newMessage = e.target.value;
+    if (newMessage.length <= maxMessageLength) {
+      setMessage(newMessage);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,6 +40,9 @@ const EmailBox = () => {
           console.log("Error sending email", error.text);
         }
       );
+
+    setUserEmail("");
+    setMessage("");
   };
 
   return (
@@ -45,7 +57,7 @@ const EmailBox = () => {
         multiline
         rows={4}
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        onChange={handleMessageChange}
       />
       <Button
         variant="contained"
@@ -62,6 +74,20 @@ const EmailBox = () => {
       >
         Send
       </Button>
+      <Typography
+        variant="body2"
+        sx={{
+          color:
+            (message?.length ?? 0) > maxMessageLength
+              ? "error.dark"
+              : "grey.600",
+          display: "block",
+          margin: "0.5rem 0 0 0",
+          textAlign: "right",
+        }}
+      >
+        {message?.length ?? 0} / {maxMessageLength}
+      </Typography>
     </Box>
   );
 };

@@ -17,6 +17,8 @@ import ResumeIcon from "@mui/icons-material/DescriptionRounded";
 import ChatBox from "../components/ChatBox";
 import Skillset from "../components/Skillset";
 import CopyrightIcon from "@mui/icons-material/CopyrightRounded";
+import emailjs from "emailjs-com";
+emailjs.init("36z9_9o_TMkuwi-Jz");
 
 export default function Home() {
   const theme = useTheme();

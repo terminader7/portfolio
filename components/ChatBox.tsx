@@ -4,6 +4,7 @@ import SelectMessageContainer from "./SelectMessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import EmailBox from "./EmailBox";
+import Image from "next/image";
 
 const ChatBox = () => {
   const userMessagesMap = {
@@ -15,11 +16,11 @@ const ChatBox = () => {
   const defaultFirstMessage = "Hello! How can I help you today?";
 
   const responseMap = {
-    "What are your hobbies?":
+    [userMessagesMap.hobbies]:
       "When I'm not working I'm either watching basketball, spending time with friends and family, or playing video games. I also enjoy cooking and weightlifting.",
-    "Tell me about yourself":
+    [userMessagesMap.about]:
       "I'm a software engineer with about 4 years of professional experience. I'm currently working on some projects, this one included.",
-    "I'd like to send a message":
+    [userMessagesMap.sendMessage]:
       "Perfect! Just type your message below, and I'll respond as soon as I can.",
   };
 
@@ -66,6 +67,13 @@ const ChatBox = () => {
 
   return (
     <Box display="flex" flexDirection="column" gap="2rem">
+      <Image
+        src="/images/picOfMe.jpg"
+        alt="Portrait of Nader"
+        width={200}
+        height={200}
+        style={{ alignSelf: "center", borderRadius: "50%" }}
+      />
       <MessageContainer messages={messages} />
       {showTextBox ? (
         <Box display="flex" justifyContent="center">

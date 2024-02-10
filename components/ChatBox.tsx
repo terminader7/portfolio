@@ -5,15 +5,21 @@ import Button from "@mui/material/Button";
 import { useState } from "react";
 import EmailBox from "./EmailBox";
 import Image from "next/image";
+import { Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/system";
 
 const ChatBox = () => {
   const userMessagesMap = {
     hobbies: "What are your hobbies?",
     about: "Tell me about yourself",
     sendMessage: "I'd like to send a message",
+    quote: "Give me a random quote",
   };
 
   const defaultFirstMessage = "Hello! How can I help you today?";
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const responseMap = {
     [userMessagesMap.hobbies]:
@@ -22,6 +28,7 @@ const ChatBox = () => {
       "I'm a software engineer with about 4 years of professional experience. I'm currently working on some projects, this one included.",
     [userMessagesMap.sendMessage]:
       "Perfect! Just type your message below, and I'll respond as soon as I can.",
+    [userMessagesMap.quote]: "Certainly!",
   };
 
   const [messages, setMessages] = useState([
@@ -29,9 +36,7 @@ const ChatBox = () => {
   ]);
   ``;
   const [messagesToSelect, setMessagesToSelect] = useState([
-    userMessagesMap.hobbies,
-    userMessagesMap.about,
-    userMessagesMap.sendMessage,
+    ...Object.values(userMessagesMap),
   ]);
   const [hasSelectedMessage, setHasSelectedMessage] = useState(false);
   const [showTextBox, setShowTextBox] = useState(false);
@@ -56,22 +61,29 @@ const ChatBox = () => {
 
   const handleRestart = () => {
     setMessages([{ message: defaultFirstMessage, isUser: false }]);
-    setMessagesToSelect([
-      userMessagesMap.hobbies,
-      userMessagesMap.about,
-      userMessagesMap.sendMessage,
-    ]);
+    setMessagesToSelect([...Object.values(userMessagesMap)]);
     setHasSelectedMessage(false);
     setShowTextBox(false);
   };
 
   return (
     <Box display="flex" flexDirection="column" gap="2rem">
+      {isMobile && (
+        <Typography
+          variant="h5"
+          textAlign="center"
+          sx={{
+            fontWeight: "bold",
+          }}
+        >
+          Nader Ebrahim
+        </Typography>
+      )}
       <Image
         src="/images/picOfMe.jpg"
         alt="Portrait of Nader"
-        width={200}
-        height={200}
+        width={100}
+        height={100}
         style={{ alignSelf: "center", borderRadius: "50%" }}
       />
       <MessageContainer messages={messages} />

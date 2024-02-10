@@ -56,7 +56,7 @@ export default function Home() {
           alignItems: "center",
           height: "100vh",
           flexDirection: { xs: "column-reverse", md: "row" },
-          marginTop: { xs: "3rem", md: "0" },
+          marginTop: { xs: "8rem", md: "0" },
           marginBottom: { xs: "5rem", md: "0" },
           gap: { xs: "2rem", md: "0" },
         }}
@@ -78,14 +78,17 @@ export default function Home() {
               gap: "1rem",
             }}
           >
-            <Typography
-              variant="h5"
-              sx={{
-                fontWeight: "bold",
-              }}
-            >
-              Nader Ebrahim
-            </Typography>
+            {!isMobile && (
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: "bold",
+                }}
+              >
+                Nader Ebrahim
+              </Typography>
+            )}
+
             <Typography
               variant={isMobile ? "h4" : "h3"}
               sx={{ fontWeight: "bold" }}

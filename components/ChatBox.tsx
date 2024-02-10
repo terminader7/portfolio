@@ -7,6 +7,7 @@ import EmailBox from "./EmailBox";
 import Image from "next/image";
 import { Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
+import { getRandomQuote } from "../features/queries";
 
 const ChatBox = () => {
   const userMessagesMap = {
@@ -14,6 +15,11 @@ const ChatBox = () => {
     about: "Tell me about yourself",
     sendMessage: "I'd like to send a message",
     quote: "Give me a random quote",
+  };
+
+  const fetchRandomQuote = async () => {
+    const quote = await getRandomQuote();
+    return quote.content;
   };
 
   const defaultFirstMessage = "Hello! How can I help you today?";
@@ -44,6 +50,23 @@ const ChatBox = () => {
   const handleUserMessageSelect = (message) => {
     if (message === userMessagesMap.sendMessage) {
       setShowTextBox(true);
+    }
+    if (message === userMessagesMap.quote) {
+      fetchRandomQuote().then((quote) => {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { message, isUser: true },
+          {
+            message: quote,
+            isUser: false,
+          },
+        ]);
+      });
+      setMessagesToSelect((prevMessages) =>
+        prevMessages.filter((msg) => msg !== message)
+      );
+      setHasSelectedMessage(true);
+      return;
     }
     setMessages((prevMessages) => [
       ...prevMessages,

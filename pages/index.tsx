@@ -88,7 +88,6 @@ export default function Home() {
                 Nader Ebrahim
               </Typography>
             )}
-
             <Typography
               variant={isMobile ? "h4" : "h3"}
               sx={{ fontWeight: "bold" }}

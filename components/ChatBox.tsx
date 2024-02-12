@@ -20,7 +20,7 @@ const ChatBox = () => {
 
   const fetchRandomQuote = async () => {
     const quote = await getRandomQuote();
-    return quote;
+    return `Certainly!\n${quote.content}\n- ${quote.author} Courtesy of quotable.io.`;
   };
 
   const defaultFirstMessage = "Hello! What can I do for you?";
@@ -35,7 +35,7 @@ const ChatBox = () => {
       "I'm a software engineer with about 4 years of professional experience. I'm currently working on some projects, this one included.",
     [userMessagesMap.sendMessage]:
       "Perfect! Just type your message below, and I'll respond as soon as I can.",
-    [userMessagesMap.quote]: `Certainly! ${fetchRandomQuote()}`,
+    [userMessagesMap.quote]: fetchRandomQuote(),
   };
 
   const [messages, setMessages] = useState([

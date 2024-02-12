@@ -7,6 +7,7 @@ import EmailBox from "./EmailBox";
 import Image from "next/image";
 import { Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
+import RestartIcon from "@mui/icons-material/RestartAltRounded";
 import { getRandomQuote } from "../features/queries";
 
 const ChatBox = () => {
@@ -19,7 +20,7 @@ const ChatBox = () => {
 
   const fetchRandomQuote = async () => {
     const quote = await getRandomQuote();
-    return quote.content;
+    return quote;
   };
 
   const defaultFirstMessage = "Hello! What can I do for you?";
@@ -34,7 +35,7 @@ const ChatBox = () => {
       "I'm a software engineer with about 4 years of professional experience. I'm currently working on some projects, this one included.",
     [userMessagesMap.sendMessage]:
       "Perfect! Just type your message below, and I'll respond as soon as I can.",
-    [userMessagesMap.quote]: "Certainly!",
+    [userMessagesMap.quote]: `Certainly! ${fetchRandomQuote()}`,
   };
 
   const [messages, setMessages] = useState([
@@ -125,6 +126,7 @@ const ChatBox = () => {
           variant="text"
           size="small"
           onClick={handleRestart}
+          endIcon={<RestartIcon />}
           sx={{
             color: "primary.red",
             width: "100px",
@@ -136,6 +138,7 @@ const ChatBox = () => {
               borderColor: "primary.red",
             },
             alignSelf: "start",
+            fontSize: "body2.fontSize",
           }}
         >
           Restart

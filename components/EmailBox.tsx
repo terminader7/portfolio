@@ -75,7 +75,7 @@ const EmailBox = () => {
       <Button
         variant="contained"
         size="small"
-        endIcon={<SendIcon fontSize="small" />}
+        endIcon={<SendIcon />}
         sx={{
           backgroundColor: "common.white",
           ":hover": { backgroundColor: "primary.green", color: "common.white" },

@@ -20,7 +20,7 @@ const ChatBox = () => {
 
   const fetchRandomQuote = async () => {
     const quote = await getRandomQuote();
-    return `Certainly!\n${quote.content}\n- ${quote.author}`;
+    return `Certainly! "${quote.content}" - ${quote.author}`;
   };
 
   const defaultFirstMessage = "Hello! What can I do for you?";

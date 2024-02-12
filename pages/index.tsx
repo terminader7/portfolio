@@ -98,9 +98,8 @@ export default function Home() {
               <MultiColorLine height={"15px"} width={"100%"} />
             </Box>
             <Typography variant="h6">
-              I specialize in crafting visually appealing, seamlessly functional
-              user interfaces and thrive on transforming abstract concepts into
-              tangible, user-friendly experiences.
+              I specialize in transforming abstract concepts into tangible,
+              user-friendly experiences.
             </Typography>
           </Box>
           <Box>

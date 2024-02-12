@@ -22,7 +22,7 @@ const ChatBox = () => {
     return quote.content;
   };
 
-  const defaultFirstMessage = "Hello! How can I help you today?";
+  const defaultFirstMessage = "Hello! What can I do for you?";
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));

@@ -1,11 +1,9 @@
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import TextField from "../../components/TextField";
 import SendIcon from "@mui/icons-material/SendRounded";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { useSnackbar } from "notistack";
-import { Send } from "@mui/icons-material";
-import InlineContainer from "../../components/InlineContainer";
 
 const EmailBox = () => {
   const [userEmail, setUserEmail] = useState("");

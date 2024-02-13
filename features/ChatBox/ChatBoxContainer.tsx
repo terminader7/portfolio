@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import MessageContainer from "./MessageContainer";
 import SelectMessageContainer from "./SelectMessageContainer";
-import Button from "@mui/material/Button";
 import { useState } from "react";
 import Image from "next/image";
 import { IconButton, Typography, useMediaQuery } from "@mui/material";

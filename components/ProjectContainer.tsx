@@ -6,15 +6,15 @@ import StyledChip from "./StyledChip";
 import { useTheme } from "@mui/material";
 
 const ProjectContainer = ({
-  projectImagePath,
-  projectImageAlt,
+  projectImagePath = "/images/wip.jpg",
+  projectImageAlt = "Work in progress",
   projectName,
   projectDesc,
   dateCompleted,
   isWiP = false,
 }: {
-  projectImagePath: string;
-  projectImageAlt: string;
+  projectImagePath?: string;
+  projectImageAlt?: string;
   projectName: string;
   projectDesc: string;
   dateCompleted: string;

@@ -278,8 +278,6 @@ export default function Home() {
           }}
         >
           <ProjectContainer
-            projectImagePath=""
-            projectImageAlt=""
             projectName="Hoops Hoopla"
             projectDesc="Nba stat tracker app built using SQL, Next, and MUI"
             dateCompleted="2024"

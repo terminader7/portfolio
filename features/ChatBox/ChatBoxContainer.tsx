@@ -113,7 +113,7 @@ const ChatBoxContainer = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: hasSelectedMessage ? "flex-end" : "center",
+          alignContent: hasSelectedMessage ? "flex-end" : "center",
           transition: "justify-content .75s",
           position: "relative",
         }}

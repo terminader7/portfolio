@@ -3,7 +3,6 @@ import MessageContainer from "./MessageContainer";
 import SelectMessageContainer from "./SelectMessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import EmailBox from "./EmailBox";
 import Image from "next/image";
 import { Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
@@ -121,17 +120,17 @@ const ChatBoxContainer = () => {
         sx={{
           display: "flex",
           justifyContent: hasSelectedMessage ? "flex-end" : "center",
-          transition: "justify-content .75s",
+          transition: "justify-content 1s",
         }}
       >
         <Image
           src="/images/picOfMe.jpg"
           alt="Portrait of Nader"
-          width={hasSelectedMessage ? 100 : 150}
-          height={hasSelectedMessage ? 100 : 150}
+          width={hasSelectedMessage ? 100 : 300}
+          height={hasSelectedMessage ? 100 : 300}
           style={{
             borderRadius: "50%",
-            transition: ".75s all",
+            transition: "1s all",
             transform: hasSelectedMessage ? "translateX(50%)" : "none",
           }}
         />

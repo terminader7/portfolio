@@ -2,20 +2,20 @@ import { Box, styled } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
-const MessageBubble = styled(Paper)<{ isUser: boolean }>(
-  ({ theme, isUser }) => `
+const MessageBubble = styled(Paper)<{ isuser: boolean }>(
+  ({ theme, isuser }) => `
     elevation: 3;
     width: fit-content;
     padding: .5rem;
     margin: .25rem;
     border-radius: 10px;
     background-color: ${
-      isUser ? theme.palette.common.white : theme.palette.primary.green
+      isuser ? theme.palette.common.white : theme.palette.primary.green
     };
-    color: ${isUser ? theme.palette.common.black : theme.palette.common.white};
-    align-self: ${isUser ? "flex-end" : "flex-start"};
-    border-bottom-right-radius: ${isUser ? "0px" : "10px"};
-    border-bottom-left-radius: ${isUser ? "10px" : "0px"};
+    color: ${isuser ? theme.palette.common.black : theme.palette.common.white};
+    align-self: ${isuser ? "flex-end" : "flex-start"};
+    border-bottom-right-radius: ${isuser ? "0px" : "10px"};
+    border-bottom-left-radius: ${isuser ? "10px" : "0px"};
   `
 );
 
@@ -28,7 +28,7 @@ const MessageContainer = ({ messages }) => {
           .map((segment, segmentIndex) => (
             <MessageBubble
               key={`${index}-${segmentIndex}`}
-              isUser={message.isUser}
+              isuser={message.isUser}
             >
               <Typography variant="body1">{segment}</Typography>
             </MessageBubble>

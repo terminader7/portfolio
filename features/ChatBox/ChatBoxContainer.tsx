@@ -98,7 +98,14 @@ const ChatBoxContainer = () => {
   };
 
   return (
-    <Box display="flex" flexDirection="column" gap="2rem">
+    <Box
+      display="flex"
+      flexDirection="column"
+      sx={{
+        marginBottom: { xs: "0", md: "5rem" },
+        gap: "2rem",
+      }}
+    >
       {isMobile && (
         <Typography
           variant="h5"
@@ -113,9 +120,8 @@ const ChatBoxContainer = () => {
       <Box
         sx={{
           display: "flex",
-          alignContent: hasSelectedMessage ? "flex-end" : "center",
+          justifyContent: hasSelectedMessage ? "flex-end" : "center",
           transition: "justify-content .75s",
-          position: "relative",
         }}
       >
         <Image

@@ -21,7 +21,6 @@ const ProjectContainer = ({
   isWiP?: boolean;
 }) => {
   const theme = useTheme();
-  const isMobile = useTheme();
   return (
     <Box
       sx={{

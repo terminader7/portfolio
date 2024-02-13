@@ -1,6 +1,7 @@
 import { Box, styled } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import EmailBox from "./EmailBox";
 
 const MessageBubble = styled(Paper)<{ isUser: boolean }>(
   ({ theme, isUser }) => `
@@ -19,9 +20,22 @@ const MessageBubble = styled(Paper)<{ isUser: boolean }>(
   `
 );
 
-const MessageContainer = ({ messages }) => {
+const MessageContainer = ({
+  messages,
+  showTextBox,
+}: {
+  messages: { message: string; isUser: boolean }[];
+  showTextBox: boolean;
+}) => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        maxHeight: "500px",
+        overflow: "auto",
+      }}
+    >
       {messages?.flatMap((message, index) => {
         const segments = message.message
           .split("_")
@@ -35,6 +49,11 @@ const MessageContainer = ({ messages }) => {
           ));
         return segments;
       })}
+      {showTextBox && (
+        <Box display="flex" justifyContent="center" marginTop="1rem">
+          <EmailBox />
+        </Box>
+      )}
     </Box>
   );
 };

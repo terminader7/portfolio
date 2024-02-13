@@ -17,8 +17,18 @@ const MessageBubble = styled(Paper)<{ isUser: boolean }>(
     align-self: ${isUser ? "flex-end" : "flex-start"};
     border-bottom-right-radius: ${isUser ? "0px" : "10px"};
     border-bottom-left-radius: ${isUser ? "10px" : "0px"};
+    margin-right:1rem;
   `
 );
+
+const MessagesBox = styled(Box)(({ theme }) => ({
+  scrollbarWidth: "thin",
+  scrollbarColor: `${theme.palette.grey[800]} transparent`,
+  display: "flex",
+  flexDirection: "column",
+  maxHeight: "500px",
+  overflow: "auto",
+}));
 
 const MessageContainer = ({
   messages,
@@ -28,14 +38,7 @@ const MessageContainer = ({
   showTextBox: boolean;
 }) => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        maxHeight: "500px",
-        overflow: "auto",
-      }}
-    >
+    <MessagesBox>
       {messages?.flatMap((message, index) => {
         const segments = message.message
           .split("_")
@@ -54,7 +57,7 @@ const MessageContainer = ({
           <EmailBox />
         </Box>
       )}
-    </Box>
+    </MessagesBox>
   );
 };
 

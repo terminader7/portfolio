@@ -13,12 +13,11 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
       {messages?.map((message, index) => (
         <Box key={index}>
           <Button
-            variant="outlined"
+            variant="contained"
             size="small"
             onClick={() => onSelect(message)}
             sx={{
               color: "common.white",
-              borderColor: "common.white",
               borderRadius: "20px",
               margin: ".25rem",
               height: "fit-content",
@@ -26,7 +25,6 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
               ":hover": {
                 backgroundColor: "common.white",
                 color: "common.black",
-                borderColor: "common.white",
               },
               width: "fit-content",
             }}

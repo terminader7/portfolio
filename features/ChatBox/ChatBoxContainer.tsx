@@ -4,7 +4,7 @@ import SelectMessageContainer from "./SelectMessageContainer";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import Image from "next/image";
-import { Typography, useMediaQuery } from "@mui/material";
+import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import RestartIcon from "@mui/icons-material/RestartAltRounded";
 import { getRandomQuote } from "../queries";
@@ -143,16 +143,11 @@ const ChatBoxContainer = () => {
         />
       )}
       {hasSelectedMessage && (
-        <Button
-          variant="text"
-          size="small"
+        <IconButton
           onClick={handleRestart}
-          endIcon={<RestartIcon />}
           sx={{
             color: "primary.red",
-            width: "100px",
             borderColor: "primary.red",
-            borderRadius: "20px",
             ":hover": {
               backgroundColor: "primary.red",
               color: "common.white",
@@ -160,10 +155,14 @@ const ChatBoxContainer = () => {
             },
             alignSelf: "start",
             fontSize: "body2.fontSize",
+            borderRadius: "10px",
+            gap: ".25rem",
+            fontWeight: "bold",
           }}
         >
           Restart
-        </Button>
+          <RestartIcon fontSize="small" />
+        </IconButton>
       )}
     </Box>
   );

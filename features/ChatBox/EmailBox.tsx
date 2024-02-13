@@ -1,9 +1,11 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import TextField from "../../components/TextField";
 import SendIcon from "@mui/icons-material/SendRounded";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { useSnackbar } from "notistack";
+import { Send } from "@mui/icons-material";
+import InlineContainer from "../../components/InlineContainer";
 
 const EmailBox = () => {
   const [userEmail, setUserEmail] = useState("");
@@ -72,22 +74,23 @@ const EmailBox = () => {
       >
         {message?.length ?? 0} / {maxMessageLength}
       </Typography>
-      <Button
-        variant="contained"
+      <IconButton
         size="small"
-        endIcon={<SendIcon />}
         sx={{
           backgroundColor: "common.white",
           ":hover": { backgroundColor: "primary.green", color: "common.white" },
-          width: "fit-content",
           fontWeight: "bold",
           alignSelf: "flex-end",
           fontSize: "body2.fontSize",
+          borderRadius: "10px",
+          gap: ".25rem",
+          color: "common.black",
         }}
         onClick={handleSubmit}
       >
         Send
-      </Button>
+        <SendIcon fontSize="small" />
+      </IconButton>
     </Box>
   );
 };

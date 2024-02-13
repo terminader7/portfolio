@@ -1,5 +1,5 @@
 import { Box, Button } from "@mui/material";
-import InlineContainer from "./InlineContainer";
+import InlineContainer from "../../components/InlineContainer";
 
 const SelectMessageContainer = ({ messages, onSelect }) => {
   return (

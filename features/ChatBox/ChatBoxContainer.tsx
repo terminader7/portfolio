@@ -8,9 +8,12 @@ import Image from "next/image";
 import { Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import RestartIcon from "@mui/icons-material/RestartAltRounded";
-import { getRandomQuote } from "../features/queries";
+import { getRandomQuote } from "../queries";
 
-const ChatBox = () => {
+const ChatBoxContainer = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const userMessagesMap = {
     hobbies: "What are your hobbies?",
     about: "Tell me about yourself",
@@ -24,9 +27,6 @@ const ChatBox = () => {
   };
 
   const defaultFirstMessage = "Hello! _ What can I do for you?";
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const responseMap = {
     [userMessagesMap.hobbies]:
@@ -110,13 +110,26 @@ const ChatBox = () => {
           Nader Ebrahim
         </Typography>
       )}
-      <Image
-        src="/images/picOfMe.jpg"
-        alt="Portrait of Nader"
-        width={100}
-        height={100}
-        style={{ alignSelf: "center", borderRadius: "50%" }}
-      />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: hasSelectedMessage ? "flex-end" : "center",
+          transition: "justify-content .75s",
+          position: "relative",
+        }}
+      >
+        <Image
+          src="/images/picOfMe.jpg"
+          alt="Portrait of Nader"
+          width={hasSelectedMessage ? 100 : 150}
+          height={hasSelectedMessage ? 100 : 150}
+          style={{
+            borderRadius: "50%",
+            transition: ".75s all",
+            transform: hasSelectedMessage ? "translateX(50%)" : "none",
+          }}
+        />
+      </Box>
       <MessageContainer messages={messages} />
       {showTextBox ? (
         <Box display="flex" justifyContent="center">
@@ -155,4 +168,4 @@ const ChatBox = () => {
   );
 };
 
-export default ChatBox;
+export default ChatBoxContainer;

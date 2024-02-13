@@ -3,7 +3,6 @@ import { Box, Typography, useMediaQuery } from "@mui/material";
 import InlineContainer from "../components/InlineContainer";
 import { useTheme } from "@mui/material";
 import MultiColorLine from "../components/MultiColorLine";
-import StyledChip from "../components/StyledChip";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
@@ -14,10 +13,10 @@ import ExperienceCard from "../components/ExperienceCard";
 import ProjectContainer from "../components/ProjectContainer";
 import ArrowIcon from "@mui/icons-material/ArrowRightAltRounded";
 import ResumeIcon from "@mui/icons-material/DescriptionRounded";
-import ChatBox from "../components/ChatBox";
 import Skillset from "../components/Skillset";
 import CopyrightIcon from "@mui/icons-material/CopyrightRounded";
 import emailjs from "emailjs-com";
+import ChatBoxContainer from "../features/ChatBox/ChatBoxContainer";
 emailjs.init("36z9_9o_TMkuwi-Jz");
 
 export default function Home() {
@@ -221,7 +220,7 @@ export default function Home() {
             flexDirection: "column",
           }}
         >
-          <ChatBox />
+          <ChatBoxContainer />
         </Box>
       </InlineContainer>
       <Box display="flex" flexDirection="column" gap="1rem" marginBottom="4rem">

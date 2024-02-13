@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import TextField from "./TextField";
+import TextField from "../../components/TextField";
 import SendIcon from "@mui/icons-material/SendRounded";
 import { useState } from "react";
 import emailjs from "emailjs-com";

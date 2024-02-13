@@ -1,34 +1,37 @@
-import { Box } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+
+const MessageBubble = styled(Paper)<{ isUser: boolean }>(
+  ({ theme, isUser }) => `
+    elevation: 3;
+    width: fit-content;
+    padding: .5rem;
+    margin: .25rem;
+    border-radius: 10px;
+    background-color: ${
+      isUser ? theme.palette.common.white : theme.palette.primary.green
+    };
+    color: ${isUser ? theme.palette.common.black : theme.palette.common.white};
+    align-self: ${isUser ? "flex-end" : "flex-start"};
+    border-bottom-right-radius: ${isUser ? "0px" : "10px"};
+    border-bottom-left-radius: ${isUser ? "10px" : "0px"};
+  `
+);
 
 const MessageContainer = ({ messages }) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
       {messages?.flatMap((message, index) => {
-        console.log({ message });
         const segments = message.message
           .split("_")
           .map((segment, segmentIndex) => (
-            <Paper
+            <MessageBubble
               key={`${index}-${segmentIndex}`}
-              elevation={3}
-              sx={{
-                width: "fit-content",
-                padding: ".5rem",
-                margin: ".25rem",
-                backgroundColor: message.isUser
-                  ? "common.white"
-                  : "primary.green",
-                color: message.isUser ? "common.black" : "common.white",
-                borderRadius: "10px",
-                borderBottomRightRadius: message.isUser ? "0px" : "10px",
-                borderBottomLeftRadius: message.isUser ? "10px" : "0px",
-                alignSelf: message.isUser ? "flex-end" : "flex-start",
-              }}
+              isUser={message.isUser}
             >
               <Typography variant="body1">{segment}</Typography>
-            </Paper>
+            </MessageBubble>
           ));
         return segments;
       })}

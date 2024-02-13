@@ -91,7 +91,7 @@ export default function Home() {
               variant={isMobile ? "h4" : "h3"}
               sx={{ fontWeight: "bold" }}
             >
-              Frontend Software Developer
+              Frontend <br /> Software Developer
             </Typography>
             <Box sx={{ paddingInline: { xs: "1rem", md: "0" } }}>
               <MultiColorLine height={"15px"} width={"100%"} />

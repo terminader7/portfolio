@@ -20,21 +20,21 @@ const ChatBox = () => {
 
   const fetchRandomQuote = async () => {
     const quote = await getRandomQuote();
-    return `Certainly! "${quote.content}" - ${quote.author}`;
+    return `"${quote.content}" _ - ${quote.author} _ Courtesy of api.quotable.io`;
   };
 
-  const defaultFirstMessage = "Hello! What can I do for you?";
+  const defaultFirstMessage = "Hello! _ What can I do for you?";
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const responseMap = {
     [userMessagesMap.hobbies]:
-      "When I'm not working I'm either watching basketball, spending time with friends and family, or playing video games. I also enjoy cooking and weightlifting.",
+      "When I'm not working I'm either watching basketball, spending time with friends and family, or playing video games. _ I also enjoy cooking and weightlifting.",
     [userMessagesMap.about]:
-      "I'm a software engineer with about 4 years of professional experience. I'm currently working on some projects, this one included.",
+      "I'm a software engineer with about 4 years of professional experience. _ I'm currently working on some projects, this one included.",
     [userMessagesMap.sendMessage]:
-      "Perfect! Just type your message below, and I'll respond as soon as I can.",
+      "Perfect! _ Just type your message below, and I'll respond as soon as I can.",
   };
 
   fetchRandomQuote()

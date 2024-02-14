@@ -95,12 +95,6 @@ const ChatBoxContainer = () => {
     setShowTextBox(false);
   };
 
-  const [isVisible, setIsVisible] = useState(!hasSelectedMessage);
-
-  const handleExit = () => {
-    setIsVisible(false);
-  };
-
   return (
     <Box
       display="flex"

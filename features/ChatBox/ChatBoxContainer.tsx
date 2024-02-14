@@ -3,7 +3,7 @@ import MessageContainer from "./MessageContainer";
 import SelectMessageContainer from "./SelectMessageContainer";
 import { useState } from "react";
 import Image from "next/image";
-import { IconButton, Typography, useMediaQuery } from "@mui/material";
+import { Fade, IconButton, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import RestartIcon from "@mui/icons-material/RestartAltRounded";
 import { getRandomQuote } from "../queries";
@@ -115,25 +115,19 @@ const ChatBoxContainer = () => {
           Nader Ebrahim
         </Typography>
       )}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: hasSelectedMessage ? "flex-end" : "center",
-          transition: "justify-content 1s",
-        }}
-      >
+
+      <Fade in={!hasSelectedMessage} timeout={1000}>
         <Image
           src="/images/picOfMe.jpg"
           alt="Portrait of Nader"
-          width={hasSelectedMessage ? 100 : 300}
-          height={hasSelectedMessage ? 100 : 300}
+          width={300}
+          height={300}
           style={{
             borderRadius: "50%",
-            transition: "1s all",
-            transform: hasSelectedMessage ? "translateX(50%)" : "none",
+            alignSelf: "center",
           }}
         />
-      </Box>
+      </Fade>
       <MessageContainer messages={messages} showTextBox={showTextBox} />
       {!showTextBox && (
         <SelectMessageContainer

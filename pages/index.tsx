@@ -117,6 +117,7 @@ export default function Home() {
               display: "flex",
               flexDirection: "column",
               alignItems: { xs: "center", md: "start" },
+              marginBottom: { xs: "18rem", md: "0" },
             }}
           >
             <Typography variant="h4" fontWeight={600} marginBottom=".5rem">
@@ -227,8 +228,10 @@ export default function Home() {
         <Typography
           variant="h4"
           fontWeight={600}
-          marginBottom=".5rem"
-          sx={{ textAlign: { xs: "center", md: "start" } }}
+          sx={{
+            textAlign: { xs: "center", md: "start" },
+            marginBottom: ".5rem",
+          }}
         >
           Experience
         </Typography>

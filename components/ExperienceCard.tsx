@@ -34,7 +34,7 @@ const ExperienceCard = ({
         flexDirection: "row",
         padding: "1rem",
         gap: "1rem",
-        width: { xs: "100%", md: "500px" },
+        width: { xs: "95%", md: "500px" },
         maxHeight: isDescriptionVisible ? "30rem" : "10rem",
         overflow: "hidden",
         transition: "max-height 0.7s ease-in-out",

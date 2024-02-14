@@ -11,7 +11,7 @@ const MessageBubble = styled(Paper)<{ isUser: boolean }>(
     margin: .25rem;
     border-radius: 10px;
     background-color: ${
-      isUser ? theme.palette.common.white : theme.palette.primary.green
+      isUser ? theme.palette.common.white : theme.palette.primary.blue
     };
     color: ${isUser ? theme.palette.common.black : theme.palette.common.white};
     align-self: ${isUser ? "flex-end" : "flex-start"};

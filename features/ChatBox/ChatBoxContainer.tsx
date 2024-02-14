@@ -21,7 +21,7 @@ const ChatBoxContainer = () => {
 
   const fetchRandomQuote = async () => {
     const quote = await getRandomQuote();
-    return `"${quote.content}" _ - ${quote.author} _ Courtesy of api.quotable.io`;
+    return `"${quote.content}" _ - ${quote.author}`;
   };
 
   const defaultFirstMessage = "Hello! _ What can I do for you?";

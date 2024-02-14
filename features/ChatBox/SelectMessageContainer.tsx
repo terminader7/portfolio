@@ -22,6 +22,7 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
               margin: ".25rem",
               height: "fit-content",
               fontSize: ".75rem",
+              backgroundColor: "primary.green",
               ":hover": {
                 backgroundColor: "common.white",
                 color: "common.black",

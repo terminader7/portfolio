@@ -292,6 +292,7 @@ export default function Home() {
             projectName="Github Finder"
             projectDesc="A simple React app that allows you to search for Github users and
             view their profile and repos using React and Node.js."
+            link="https://github-finder-blond-nine.vercel.app/"
             dateCompleted="2021"
           />
           <ProjectContainer

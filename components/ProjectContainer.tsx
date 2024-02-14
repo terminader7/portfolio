@@ -4,6 +4,7 @@ import Image from "next/image";
 import InlineContainer from "./InlineContainer";
 import StyledChip from "./StyledChip";
 import { useTheme } from "@mui/material";
+import LinkIcon from "@mui/icons-material/LaunchRounded";
 
 const ProjectContainer = ({
   projectImagePath = "/images/wip.jpg",
@@ -11,6 +12,7 @@ const ProjectContainer = ({
   projectName,
   projectDesc,
   dateCompleted,
+  link,
   isWiP = false,
 }: {
   projectImagePath?: string;
@@ -18,6 +20,7 @@ const ProjectContainer = ({
   projectName: string;
   projectDesc: string;
   dateCompleted: string;
+  link?: string;
   isWiP?: boolean;
 }) => {
   const theme = useTheme();
@@ -42,8 +45,27 @@ const ProjectContainer = ({
           borderRadius: "10px",
         }}
       />
-      <Typography variant="h6" fontWeight={600}>
+      <Typography
+        variant="h6"
+        fontWeight={600}
+        onClick={() => link && window.open(link, "_blank")}
+        sx={{
+          ":hover": {
+            cursor: "pointer",
+          },
+        }}
+      >
         {projectName}
+        {link && (
+          <LinkIcon
+            fontSize="small"
+            sx={{
+              verticalAlign: "text-top",
+              marginLeft: ".25rem",
+              color: theme.palette.grey[300],
+            }}
+          />
+        )}
       </Typography>
       <Typography variant="body1" color={theme.palette.grey[400]}>
         {projectDesc}

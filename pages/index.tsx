@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <Box
       sx={{
-        paddingInline: isMobile ? "0" : "10rem",
+        paddingInline: isMobile ? "0" : "20rem",
         display: "flex",
         flexDirection: "column",
       }}
@@ -217,7 +217,7 @@ export default function Home() {
         <Box
           sx={{
             display: "flex",
-            width: { xs: "90%", md: "30%" },
+            width: { xs: "90%", md: "40%" },
             flexDirection: "column",
           }}
         >

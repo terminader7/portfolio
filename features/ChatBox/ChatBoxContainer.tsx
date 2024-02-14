@@ -13,10 +13,10 @@ const ChatBoxContainer = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const userMessagesMap = {
-    hobbies: "What are your hobbies?",
-    about: "Tell me about yourself",
-    sendMessage: "I'd like to send a message",
-    quote: "Give me a random quote",
+    hobbies: "What are your hobbies? 🏀",
+    about: "Tell me about yourself 🤔",
+    sendMessage: "I'd like to send a message 📬",
+    quote: "Give me a random quote 📜",
   };
 
   const fetchRandomQuote = async () => {
@@ -95,6 +95,12 @@ const ChatBoxContainer = () => {
     setShowTextBox(false);
   };
 
+  const [isVisible, setIsVisible] = useState(!hasSelectedMessage);
+
+  const handleExit = () => {
+    setIsVisible(false);
+  };
+
   return (
     <Box
       display="flex"
@@ -115,8 +121,7 @@ const ChatBoxContainer = () => {
           Nader Ebrahim
         </Typography>
       )}
-
-      <Fade in={!hasSelectedMessage} timeout={1000}>
+      <Fade in={!hasSelectedMessage} timeout={500}>
         <Image
           src="/images/picOfMe.jpg"
           alt="Portrait of Nader"
@@ -128,7 +133,11 @@ const ChatBoxContainer = () => {
           }}
         />
       </Fade>
-      <MessageContainer messages={messages} showTextBox={showTextBox} />
+      <MessageContainer
+        messages={messages}
+        showTextBox={showTextBox}
+        hasSelectedMessage={hasSelectedMessage}
+      />
       {!showTextBox && (
         <SelectMessageContainer
           messages={messagesToSelect}

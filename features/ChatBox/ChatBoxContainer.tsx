@@ -27,7 +27,7 @@ const ChatBoxContainer = () => {
 
   const fetchRandomJoke = async () => {
     const joke = await getRandomJoke();
-    return `${joke.setup} _ ${joke.delivery}`;
+    return `${joke.joke}`;
   };
 
   const defaultFirstMessage = "Hello! _ What can I do for you?";

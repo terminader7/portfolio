@@ -10,7 +10,7 @@ import { getRandomJoke, getRandomQuote } from "../queries";
 
 const ChatBoxContainer = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const userMessagesMap = {
     about: "Tell me about yourself 🤔",
@@ -123,24 +123,13 @@ const ChatBoxContainer = () => {
 
   return (
     <Box
-      display="flex"
-      flexDirection="column"
       sx={{
-        marginBottom: { xs: "0", md: "5rem" },
+        display: "flex",
+        flexDirection: "column",
+        marginBottom: { xs: "0", lg: "5rem" },
         gap: "2rem",
       }}
     >
-      {isMobile && (
-        <Typography
-          variant="h5"
-          textAlign="center"
-          sx={{
-            fontWeight: "bold",
-          }}
-        >
-          Nader Ebrahim
-        </Typography>
-      )}
       <Fade in={!hasSelectedMessage} timeout={500}>
         <Image
           src="/images/picOfMe.jpg"

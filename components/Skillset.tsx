@@ -9,8 +9,8 @@ const Skillset = () => {
       gap=".5rem"
       sx={{
         flexWrap: "wrap",
-        justifyContent: { xs: "center", md: "start" },
-        width: { xs: "100%", md: "80%" },
+        justifyContent: { xs: "center", lg: "start" },
+        width: { xs: "100%", lg: "65%" },
       }}
     >
       <StyledChip label="HTML" background={theme.palette.primary.red} />

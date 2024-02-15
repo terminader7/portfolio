@@ -12,7 +12,7 @@ function MyPortfolio({ Component, pageProps }) {
     [primaryColor, secondaryColor]
   );
 
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
     <ThemeProvider theme={theme}>

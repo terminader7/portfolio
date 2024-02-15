@@ -33,10 +33,10 @@ const ProjectContainer = ({
         display: "flex",
         flexDirection: "column",
         gap: ".5rem",
-        width: { xs: "100%", md: "20rem" },
-        height: { xs: "fit-content", md: "400px" },
-        alignItems: { xs: "center", md: "start" },
-        textAlign: { xs: "center", md: "start" },
+        width: { xs: "100%", lg: "20rem" },
+        height: { xs: "fit-content", lg: "400px" },
+        alignItems: { xs: "center", lg: "start" },
+        textAlign: { xs: "center", lg: "start" },
       }}
     >
       <Image
@@ -71,7 +71,11 @@ const ProjectContainer = ({
           />
         )}
       </Typography>
-      <Typography variant="body1" color={theme.palette.grey[400]}>
+      <Typography
+        variant="body1"
+        color={theme.palette.grey[400]}
+        sx={{ width: { xs: "80%", lg: "100%" } }}
+      >
         {projectDesc}
       </Typography>
       <InlineContainer gap="1rem">

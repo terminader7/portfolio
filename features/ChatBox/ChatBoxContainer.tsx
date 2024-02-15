@@ -66,21 +66,30 @@ const ChatBoxContainer = () => {
   ]);
   const [hasSelectedMessage, setHasSelectedMessage] = useState(false);
   const [showTextBox, setShowTextBox] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
 
   const handleUserMessageSelect = (message) => {
+    setIsTyping(true);
     if (message === userMessagesMap.sendMessage) {
       setShowTextBox(true);
+      setIsTyping(false);
     }
     if (message === userMessagesMap.quote) {
       fetchRandomQuote().then((quote) => {
         setMessages((prevMessages) => [
           ...prevMessages,
           { message, isUser: true },
-          {
-            message: quote,
-            isUser: false,
-          },
         ]);
+        setTimeout(() => {
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            {
+              message: quote,
+              isUser: false,
+            },
+          ]);
+          setIsTyping(false);
+        }, 1000);
       });
       setMessagesToSelect((prevMessages) =>
         prevMessages.filter((msg) => msg !== message)
@@ -88,14 +97,17 @@ const ChatBoxContainer = () => {
       setHasSelectedMessage(true);
       return;
     }
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { message, isUser: true },
-      {
-        message: responseMap[message] || "I don't know the answer to that.",
-        isUser: false,
-      },
-    ]);
+    setMessages((prevMessages) => [...prevMessages, { message, isUser: true }]);
+    setTimeout(() => {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          message: responseMap[message] || "I don't know the answer to that.",
+          isUser: false,
+        },
+      ]);
+      setIsTyping(false);
+    }, 1000);
     setMessagesToSelect((prevMessages) =>
       prevMessages.filter((msg) => msg !== message)
     );
@@ -145,6 +157,7 @@ const ChatBoxContainer = () => {
         messages={messages}
         showTextBox={showTextBox}
         hasSelectedMessage={hasSelectedMessage}
+        isTyping={isTyping}
       />
       {!showTextBox && (
         <SelectMessageContainer

@@ -1,9 +1,14 @@
-import { Box, Fade, styled } from "@mui/material";
+import { useState } from "react";
+import { Box, Fade, styled, Typography } from "@mui/material";
 import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import EmailBox from "./EmailBox";
 import Image from "next/image";
 import InlineContainer from "../../components/InlineContainer";
+import EmailBox from "./EmailBox";
+
+const TypingIndicator = styled(Typography)(({ theme }) => ({
+  fontStyle: "italic",
+  color: theme.palette.text.secondary,
+}));
 
 const MessageBubble = styled(Paper)<{ isUser: boolean }>(
   ({ theme, isUser }) => `
@@ -35,10 +40,12 @@ const MessageContainer = ({
   messages,
   showTextBox,
   hasSelectedMessage,
+  isTyping,
 }: {
   messages: { message: string; isUser: boolean }[];
   showTextBox: boolean;
   hasSelectedMessage: boolean;
+  isTyping: boolean;
 }) => {
   return (
     <MessagesBox>
@@ -75,6 +82,17 @@ const MessageContainer = ({
           ));
         return segments;
       })}
+      {isTyping && (
+        <Box sx={{ alignSelf: "flex-start", marginLeft: "1rem" }}>
+          <TypingIndicator
+            variant="body2"
+            fontWeight={600}
+            sx={{ color: "common.white" }}
+          >
+            Typing...
+          </TypingIndicator>
+        </Box>
+      )}
       {showTextBox && (
         <Box display="flex" justifyContent="center" marginTop="1rem">
           <EmailBox />

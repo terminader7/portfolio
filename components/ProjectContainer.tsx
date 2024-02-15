@@ -14,6 +14,7 @@ const ProjectContainer = ({
   dateCompleted,
   link,
   isWiP = false,
+  isRetired = false,
 }: {
   projectImagePath?: string;
   projectImageAlt?: string;
@@ -22,6 +23,7 @@ const ProjectContainer = ({
   dateCompleted: string;
   link?: string;
   isWiP?: boolean;
+  isRetired?: boolean;
 }) => {
   const theme = useTheme();
 
@@ -44,6 +46,7 @@ const ProjectContainer = ({
         height={150}
         style={{
           borderRadius: "10px",
+          filter: isRetired ? "brightness(0.5)" : "none",
         }}
       />
       <Typography
@@ -78,6 +81,9 @@ const ProjectContainer = ({
         />
         {isWiP && (
           <StyledChip label="WiP" background={theme.palette.primary.red} />
+        )}
+        {isRetired && (
+          <StyledChip label="Retired" background={theme.palette.grey[800]} />
         )}
       </InlineContainer>
     </Box>

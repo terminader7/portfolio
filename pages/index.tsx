@@ -301,6 +301,7 @@ export default function Home() {
             projectName="Contact Keeper"
             projectDesc="Full stack MERN application for keeping track of contacts. Built with React, Node.js, Express, and MongoDB."
             dateCompleted="2022"
+            isRetired
           />
         </InlineContainer>
       </Box>

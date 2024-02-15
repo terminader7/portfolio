@@ -5,10 +5,11 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
   return (
     <InlineContainer
       sx={{
+        alignSelf: "end",
         justifyContent: "flex-end",
         flexFlow: "wrap",
         gap: { xs: "6px", md: ".5rem" },
-        width: { xs: "100%", md: "90%" },
+        width: "90%",
       }}
     >
       {messages?.map((message, index) => (

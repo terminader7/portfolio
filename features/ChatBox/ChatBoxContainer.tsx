@@ -13,11 +13,11 @@ const ChatBoxContainer = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const userMessagesMap = {
+    about: "Tell me about yourself 🤔",
+    hobbies: "What are your hobbies? 🏀",
     sendMessage: "Send a message 📬",
     quote: "Quote of the day? 📜",
     joke: "Tell me a joke 😂",
-    about: "Tell me about yourself 🤔",
-    hobbies: "What are your hobbies? 🏀",
   };
 
   const fetchRandomQuote = async () => {

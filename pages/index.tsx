@@ -47,6 +47,7 @@ export default function Home() {
         <title>Naders Portfolio</title>
         <meta name="description" content="Nader's Portfolio" />
         <link rel="icon" href="/images/favicon.svg" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font*/}
         <link
           href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"

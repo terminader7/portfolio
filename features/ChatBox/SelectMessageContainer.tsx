@@ -9,7 +9,7 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
         justifyContent: "flex-end",
         flexFlow: "wrap",
         gap: { xs: "6px", md: ".5rem" },
-        width: "90%",
+        width: { xs: "100%", md: "90%" },
       }}
     >
       {messages?.map((message, index) => (

@@ -133,8 +133,8 @@ const ChatBoxContainer = () => {
         <Image
           src="/images/picOfMe.jpg"
           alt="Portrait of Nader"
-          width={300}
-          height={300}
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
           style={{
             borderRadius: "50%",
             alignSelf: "center",

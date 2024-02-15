@@ -32,6 +32,7 @@ const ProjectContainer = ({
         flexDirection: "column",
         gap: ".5rem",
         width: { xs: "100%", md: "20rem" },
+        height: { xs: "fit-content", md: "400px" },
         alignItems: { xs: "center", md: "start" },
         textAlign: { xs: "center", md: "start" },
       }}

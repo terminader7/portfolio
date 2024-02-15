@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <Box
       sx={{
-        paddingInline: isMobile ? "0" : "25rem",
+        paddingInline: isMobile ? "0" : "22.5rem",
         display: "flex",
         flexDirection: "column",
       }}
@@ -160,7 +160,7 @@ export default function Home() {
               </IconButton>
               <IconButton
                 onClick={() => {
-                  window.open("/NaderEbrahim.pdf");
+                  window.open("/naderebrahim.pdf");
                 }}
               >
                 <ResumeIcon
@@ -265,7 +265,7 @@ export default function Home() {
           />
         </InlineContainer>
       </Box>
-      <Box display="flex" flexDirection="column" gap="1rem" marginBottom="5rem">
+      <Box display="flex" flexDirection="column" gap="1rem">
         <Typography
           variant="h4"
           fontWeight={600}

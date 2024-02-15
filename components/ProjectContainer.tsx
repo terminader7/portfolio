@@ -55,7 +55,7 @@ const ProjectContainer = ({
         onClick={() => link && window.open(link, "_blank")}
         sx={{
           ":hover": {
-            cursor: "pointer",
+            cursor: !isWiP && !isRetired ? "pointer" : "default",
           },
         }}
       >

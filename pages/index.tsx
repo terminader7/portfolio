@@ -292,7 +292,7 @@ export default function Home() {
             isWiP
           />
           <ProjectContainer
-            projectImagePath="/images/github-finder.jpg"
+            projectImagePath="/images/github-app.jpg"
             projectImageAlt="Image of github finder app"
             projectName="Github Finder"
             projectDesc="A simple React app that allows you to search for Github users and

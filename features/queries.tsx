@@ -9,6 +9,5 @@ export const getRandomJoke = async () => {
   const response = await fetch("https://v2.jokeapi.dev/joke/Any");
 
   const data = await response.json();
-  console.log({ data });
   return data;
 };

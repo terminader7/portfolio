@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Fade, IconButton, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import RestartIcon from "@mui/icons-material/RestartAltRounded";
-import { getRandomQuote } from "../queries";
+import { getRandomJoke, getRandomQuote } from "../queries";
 
 const ChatBoxContainer = () => {
   const theme = useTheme();
@@ -17,11 +17,17 @@ const ChatBoxContainer = () => {
     about: "Tell me about yourself 🤔",
     sendMessage: "I'd like to send a message 📬",
     quote: "Give me a random quote 📜",
+    joke: "Tell me a joke 😂",
   };
 
   const fetchRandomQuote = async () => {
     const quote = await getRandomQuote();
     return `"${quote.content}" _ - ${quote.author}`;
+  };
+
+  const fetchRandomJoke = async () => {
+    const joke = await getRandomJoke();
+    return `${joke.setup} _ ${joke.delivery}`;
   };
 
   const defaultFirstMessage = "Hello! _ What can I do for you?";
@@ -41,6 +47,14 @@ const ChatBoxContainer = () => {
     })
     .catch((error) => {
       console.error("Error fetching random quote:", error);
+    });
+
+  fetchRandomJoke()
+    .then((joke) => {
+      responseMap[userMessagesMap.joke] = joke;
+    })
+    .catch((error) => {
+      console.error("Error fetching random joke:", error);
     });
 
   const [messages, setMessages] = useState([

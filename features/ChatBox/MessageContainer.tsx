@@ -10,7 +10,7 @@ const TypingIndicator = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const MessageBubble = styled(Paper)<{ isUser: boolean }>(
+const MessageBubble = styled(Paper)<{ isUser?: boolean }>(
   ({ theme, isUser }) => `
     elevation: 3;
     width: fit-content;
@@ -76,22 +76,38 @@ const MessageContainer = ({
                 </Fade>
               )}
               <MessageBubble isUser={message.isUser}>
-                <Typography variant="body1">{segment}</Typography>
+                <Typography variant="body1" fontWeight={500}>
+                  {segment}
+                </Typography>
               </MessageBubble>
             </InlineContainer>
           ));
         return segments;
       })}
       {isTyping && (
-        <Box sx={{ alignSelf: "flex-start", marginLeft: "1rem" }}>
-          <TypingIndicator
-            variant="body2"
-            fontWeight={600}
-            sx={{ color: "common.white" }}
-          >
-            Typing...
-          </TypingIndicator>
-        </Box>
+        <InlineContainer gap=".5rem">
+          <Fade in={hasSelectedMessage} timeout={500}>
+            <Image
+              src="/images/picOfMe.jpg"
+              alt="Portrait of Nader"
+              width={40}
+              height={40}
+              style={{
+                borderRadius: "50%",
+                alignSelf: "center",
+              }}
+            />
+          </Fade>
+          <MessageBubble>
+            <TypingIndicator
+              variant="body2"
+              fontWeight={600}
+              sx={{ color: "common.white" }}
+            >
+              Typing...
+            </TypingIndicator>
+          </MessageBubble>
+        </InlineContainer>
       )}
       {showTextBox && (
         <Box display="flex" justifyContent="center" marginTop="1rem">

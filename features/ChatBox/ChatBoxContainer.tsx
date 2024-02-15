@@ -38,7 +38,7 @@ const ChatBoxContainer = () => {
     [userMessagesMap.about]:
       "I'm a software engineer with about 4 years of professional experience. _ I'm currently working on some projects, this one included.",
     [userMessagesMap.sendMessage]:
-      "Perfect! _ Just type your message below, and I'll respond as soon as I can.",
+      "Perfect! Just type your message below, and I'll respond as soon as I can.",
   };
 
   fetchRandomQuote()
@@ -89,7 +89,7 @@ const ChatBoxContainer = () => {
             },
           ]);
           setIsTyping(false);
-        }, 1000);
+        }, 2000);
       });
       setMessagesToSelect((prevMessages) =>
         prevMessages.filter((msg) => msg !== message)

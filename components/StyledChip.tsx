@@ -18,6 +18,7 @@ const Chip = styled(MuiChip)<StyledChipProps>(
     border-radius: 4px;
     color: ${theme.palette.common.white};
     background-color: ${background};
+    font-family: ${theme.typography.fontFamily};
 `
 );
 

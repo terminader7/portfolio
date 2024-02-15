@@ -80,7 +80,7 @@ export const getThemeOptions = (
       : {}),
   },
   typography: {
-    fontFamily: "roboto, sans-serif",
+    fontFamily: "Raleway, sans-serif",
     fontSize: 14,
   },
   components: {
@@ -88,7 +88,7 @@ export const getThemeOptions = (
       styleOverrides: {
         root: {
           color: "currentColor",
-          fontFamily: "roboto, sans-serif",
+          fontFamily: "Raleway, sans-serif",
         },
       },
     },

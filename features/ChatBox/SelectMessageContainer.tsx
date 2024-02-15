@@ -6,8 +6,8 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
     <InlineContainer
       sx={{
         justifyContent: "flex-end",
-        flexFlow: "row wrap",
-        gap: { xs: ".25rem", md: "0" },
+        flexFlow: "wrap",
+        gap: { xs: "6px", md: ".5rem" },
         width: "100%",
       }}
     >
@@ -20,15 +20,12 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
             sx={{
               color: "common.white",
               borderRadius: "20px",
-              margin: ".25rem",
-              height: "fit-content",
               fontSize: ".75rem",
               backgroundColor: "primary.green",
               ":hover": {
                 backgroundColor: "common.white",
                 color: "common.black",
               },
-              width: "fit-content",
             }}
           >
             {message}

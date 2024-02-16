@@ -74,7 +74,7 @@ export default function Home() {
           justifyContent: { xs: "center", lg: "space-between" },
           alignItems: "center",
           gap: { xs: "3rem", lg: "4rem" },
-          height: "100vh",
+          height: "85vh",
           flexDirection: { xs: "column-reverse", lg: "row" },
         }}
       >
@@ -104,7 +104,7 @@ export default function Home() {
             <Box sx={{ paddingInline: { xs: "1rem", lg: "0" } }}>
               <MultiColorLine height={"12px"} width={"100%"} />
             </Box>
-            <Typography variant="h6">
+            <Typography variant="h6" sx={{ width: { lg: "80%" } }}>
               I specialize in transforming abstract concepts into tangible,
               user-friendly experiences.
             </Typography>

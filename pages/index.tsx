@@ -102,7 +102,7 @@ export default function Home() {
               Frontend <br /> Software Developer
             </Typography>
             <Box sx={{ paddingInline: { xs: "1rem", lg: "0" } }}>
-              <MultiColorLine height={"15px"} width={"100%"} />
+              <MultiColorLine height={"12px"} width={"100%"} />
             </Box>
             <Typography variant="h6">
               I specialize in transforming abstract concepts into tangible,

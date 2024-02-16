@@ -224,7 +224,7 @@ export default function Home() {
         <Box
           sx={{
             display: "flex",
-            width: { xs: "90%", lg: "45%" },
+            width: { xs: "90%", md: "50%", lg: "40%" },
             flexDirection: "column",
           }}
         >

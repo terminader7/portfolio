@@ -55,18 +55,19 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <InlineContainer
-        sx={{
-          borderBottom: `1px solid ${theme.palette.grey[500]}`,
-          width: "100%",
-          justifyContent: "space-between",
-          padding: "1rem",
-        }}
-      >
-        <Typography variant="h5" fontWeight={600}>
-          Nader Ebrahim
-        </Typography>
-      </InlineContainer>
+      <Box>
+        <InlineContainer
+          sx={{
+            width: "100%",
+            padding: "1rem",
+          }}
+        >
+          <Typography variant="h5" fontWeight={600} textAlign="start">
+            Nader Ebrahim
+          </Typography>
+        </InlineContainer>
+        <MultiColorLine height={"1px"} width={"100%"} />
+      </Box>
       <InlineContainer
         sx={{
           width: "100%",

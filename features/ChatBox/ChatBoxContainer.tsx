@@ -72,7 +72,6 @@ const ChatBoxContainer = () => {
     setIsTyping(true);
     if (message === userMessagesMap.sendMessage) {
       setShowTextBox(true);
-      setIsTyping(false);
     }
     if (message === userMessagesMap.quote) {
       fetchRandomQuote().then((quote) => {

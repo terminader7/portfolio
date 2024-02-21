@@ -40,7 +40,7 @@ export default function Home() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        paddingInline: { xs: "1rem", lg: "20rem" },
+        paddingInline: { xs: "1rem", lg: "18rem" },
         justifyContent: "flex-start",
         gap: { xs: "5rem", lg: "4" },
       }}
@@ -74,7 +74,7 @@ export default function Home() {
           justifyContent: { xs: "center", lg: "space-between" },
           alignItems: "center",
           gap: { xs: "3rem", lg: "4rem" },
-          height: "85vh",
+          height: { xs: "100%", lg: "85vh" },
           flexDirection: { xs: "column-reverse", lg: "row" },
         }}
       >

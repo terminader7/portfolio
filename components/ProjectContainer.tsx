@@ -26,6 +26,7 @@ const ProjectContainer = ({
   isRetired?: boolean;
 }) => {
   const theme = useTheme();
+  const isMobile = theme.breakpoints.down("lg");
 
   return (
     <Box
@@ -33,7 +34,6 @@ const ProjectContainer = ({
         display: "flex",
         flexDirection: "column",
         gap: ".5rem",
-        width: { xs: "100%", lg: "20rem" },
         height: { xs: "fit-content", lg: "400px" },
         alignItems: { xs: "center", lg: "start" },
         textAlign: { xs: "center", lg: "start" },
@@ -42,8 +42,8 @@ const ProjectContainer = ({
       <Image
         src={projectImagePath}
         alt={projectImageAlt}
-        width={300}
-        height={150}
+        width={isMobile ? 350 : 400}
+        height={isMobile ? 175 : 200}
         style={{
           borderRadius: "10px",
           filter: isRetired ? "brightness(0.6)" : "none",

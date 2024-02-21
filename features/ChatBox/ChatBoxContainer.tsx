@@ -127,20 +127,25 @@ const ChatBoxContainer = () => {
         flexDirection: "column",
         marginBottom: { xs: "0", lg: "5rem" },
         gap: "2rem",
+        padding: "1rem",
+        maxWidth: "550px",
       }}
     >
-      <Fade in={!hasSelectedMessage} timeout={500}>
-        <Image
-          src="/images/picOfMe.jpg"
-          alt="Portrait of Nader"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          style={{
-            borderRadius: "50%",
-            alignSelf: "center",
-          }}
-        />
-      </Fade>
+      {!hasSelectedMessage && (
+        <Fade in={!hasSelectedMessage} timeout={500}>
+          <Image
+            src="/images/picOfMe.jpg"
+            alt="Portrait of Nader"
+            width={isMobile ? 150 : 300}
+            height={isMobile ? 150 : 300}
+            style={{
+              borderRadius: "50%",
+              alignSelf: "center",
+            }}
+          />
+        </Fade>
+      )}
+
       <MessageContainer
         messages={messages}
         showTextBox={showTextBox}

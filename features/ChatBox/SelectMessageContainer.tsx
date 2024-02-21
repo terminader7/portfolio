@@ -9,7 +9,8 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
         justifyContent: "flex-end",
         flexFlow: "wrap",
         gap: { xs: "6px", lg: ".5rem" },
-        width: { xs: "100%", md: "70%", lg: "80%" },
+        width: { xs: "100%", lg: "80%" },
+        maxWidth: "500px",
       }}
     >
       {messages?.map((message, index) => (
@@ -21,7 +22,8 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
             sx={{
               color: "common.white",
               borderRadius: "20px",
-              fontSize: ".75rem",
+              fontSize: { xs: ".7rem", lg: ".75rem" },
+              fontWeight: "bold",
               backgroundColor: "primary.green",
               ":hover": {
                 backgroundColor: "common.white",

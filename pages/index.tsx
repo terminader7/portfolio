@@ -40,9 +40,9 @@ export default function Home() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        paddingInline: { xs: "1rem", lg: "18rem" },
-        justifyContent: "flex-start",
-        gap: { xs: "5rem", lg: "4" },
+        gap: "3rem",
+        marginLeft: "auto",
+        marginRight: "auto",
       }}
     >
       <Head>
@@ -55,36 +55,44 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <Box>
+      <Box
+        sx={{
+          width: "100%",
+          margin: "auto",
+          maxWidth: "1500px",
+        }}
+      >
         <InlineContainer
           sx={{
-            width: "100%",
-            padding: "1rem",
+            padding: { xs: ".5rem", lg: "1rem" },
+            justifyContent: { xs: "center", lg: "start" },
           }}
         >
-          <Typography variant="h5" fontWeight={600} textAlign="start">
+          <Typography variant="h6" fontWeight={600}>
             Nader Ebrahim
           </Typography>
         </InlineContainer>
-        <MultiColorLine height={"1px"} width={"100%"} />
+        <MultiColorLine height={"2px"} width={"100%"} />
       </Box>
       <InlineContainer
         sx={{
-          width: "100%",
-          justifyContent: { xs: "center", lg: "space-between" },
-          alignItems: "center",
-          gap: { xs: "3rem", lg: "4rem" },
+          justifyContent: { xs: "center", lg: "" },
+          gap: { xs: "3rem", lg: "8rem" },
           height: { xs: "100%", lg: "85vh" },
+          width: "100%",
           flexDirection: { xs: "column-reverse", lg: "row" },
+          marginLeft: "auto",
+          marginRight: "auto",
+          maxWidth: "1500px",
         }}
       >
         <Box
           sx={{
             display: "flex",
-            width: { xs: "100%", lg: "50%" },
             gap: "2rem",
             flexDirection: "column",
             justifyContent: "center",
+            maxWidth: { xs: "100%", lg: "800px" },
           }}
         >
           <Box
@@ -101,9 +109,7 @@ export default function Home() {
             >
               Frontend <br /> Software Developer
             </Typography>
-            <Box sx={{ paddingInline: { xs: "1rem", lg: "0" } }}>
-              <MultiColorLine height={"12px"} width={"100%"} />
-            </Box>
+            <MultiColorLine height={"12px"} width={"100%"} />
             <Typography variant="h6" sx={{ width: { lg: "80%" } }}>
               I specialize in transforming abstract concepts into tangible,
               user-friendly experiences.
@@ -223,9 +229,7 @@ export default function Home() {
         </Box>
         <Box
           sx={{
-            display: "flex",
-            width: { xs: "90%", md: "50%", lg: "40%" },
-            flexDirection: "column",
+            width: { xs: "100%", lg: "45%" },
           }}
         >
           <ChatBoxContainer />
@@ -236,7 +240,8 @@ export default function Home() {
           display: "flex",
           flexDirection: "column",
           gap: "1rem",
-          alignContent: "center",
+          marginLeft: "auto",
+          marginRight: "auto",
         }}
       >
         <Typography
@@ -245,6 +250,7 @@ export default function Home() {
           sx={{
             textAlign: { xs: "center", lg: "start" },
             marginBottom: ".5rem",
+            maxWidth: "1500px",
           }}
         >
           Experience
@@ -280,10 +286,15 @@ export default function Home() {
         </InlineContainer>
       </Box>
       <Box
-        display="flex"
-        flexDirection="column"
-        gap="1rem"
-        sx={{ justifyContent: "center" }}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+          justifyContent: "center",
+          marginLeft: "auto",
+          marginRight: "auto",
+          maxWidth: "1500px",
+        }}
       >
         <Typography
           variant="h4"
@@ -349,7 +360,7 @@ export default function Home() {
           textAlign="center"
           color={theme.palette.grey[500]}
         >
-          Version 1.0 built with Next.js and Material UI.
+          Version 1.0.0 built with Next.js and Material UI.
         </Typography>
       </Box>
     </Box>

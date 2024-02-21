@@ -22,7 +22,7 @@ const SelectMessageContainer = ({ messages, onSelect }) => {
             sx={{
               color: "common.white",
               borderRadius: "20px",
-              fontSize: { xs: ".7rem", lg: ".75rem" },
+              fontSize: ".75rem",
               fontWeight: "bold",
               backgroundColor: "primary.green",
               ":hover": {

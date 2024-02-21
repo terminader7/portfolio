@@ -46,7 +46,7 @@ const ProjectContainer = ({
         height={150}
         style={{
           borderRadius: "10px",
-          filter: isRetired ? "brightness(0.5)" : "none",
+          filter: isRetired ? "brightness(0.6)" : "none",
         }}
       />
       <Typography
@@ -55,7 +55,7 @@ const ProjectContainer = ({
         onClick={() => link && window.open(link, "_blank")}
         sx={{
           ":hover": {
-            cursor: !isWiP && !isRetired ? "pointer" : "default",
+            cursor: "pointer",
           },
         }}
       >

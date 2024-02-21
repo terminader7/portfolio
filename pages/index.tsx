@@ -305,6 +305,7 @@ export default function Home() {
               projectName="Hoops Hoopla"
               projectDesc="Nba stat tracker app built using SQL, Next, and MUI"
               dateCompleted="2024"
+              link="https://github.com/terminader7/Hoops-Hoopla"
               isWiP
             />
           </Grid>
@@ -333,6 +334,7 @@ export default function Home() {
               projectName="Contact Keeper"
               projectDesc="Full stack MERN application for keeping track of contacts. Built with React, Node.js, Express, and MongoDB."
               dateCompleted="2022"
+              link="https://github.com/terminader7/Contact-Keeper"
               isRetired
             />
           </Grid>

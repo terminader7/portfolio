@@ -295,7 +295,7 @@ export default function Home() {
         </Typography>
         <Grid
           container
-          spacing={4}
+          spacing={{ xs: 6, lg: 24 }}
           sx={{
             justifyContent: { xs: "center", lg: "start" },
           }}
@@ -317,14 +317,6 @@ export default function Home() {
               projectDesc="A simple React app that allows you to search for Github users and view their profile and repos using React and Node.js."
               link="https://github-finder-git-master-terminader7s-projects.vercel.app/"
               dateCompleted="2021"
-            />
-          </Grid>
-          <Grid item xs={12} lg={4}>
-            <ProjectContainer
-              projectName="DRAFTR"
-              projectDesc="A full stack MERN application for creating and conducting mock drafts for fantasy sports."
-              dateCompleted="2024"
-              isWiP
             />
           </Grid>
           <Grid item xs={12} lg={4}>

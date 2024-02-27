@@ -34,7 +34,7 @@ const ChatBoxContainer = () => {
 
   const responseMap = {
     [userMessagesMap.hobbies]:
-      "When I'm not working I'm either watching basketball, spending time with friends and family, or playing video games. _ I also enjoy cooking and weightlifting.",
+      "When I'm not working I'm either watching basketball, spending time with friends and family, or playing video games. _ I also enjoy trying my hand at cooking, I'm always looking for new recipes to try out!",
     [userMessagesMap.about]:
       "I'm a software engineer with about 3 years of professional experience. _ I'm currently working on some projects, this one included.",
     [userMessagesMap.sendMessage]:

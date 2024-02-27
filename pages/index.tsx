@@ -40,7 +40,7 @@ export default function Home() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        gap: "3rem",
+        gap: "5rem",
         marginLeft: "auto",
         marginRight: "auto",
       }}
@@ -285,6 +285,7 @@ export default function Home() {
           />
         </InlineContainer>
       </Box>
+
       <Box
         sx={{
           display: "flex",
@@ -306,7 +307,7 @@ export default function Home() {
         </Typography>
         <Grid
           container
-          spacing={{ xs: 6, lg: 24 }}
+          spacing={{ xs: 6, lg: 20 }}
           sx={{
             justifyContent: { xs: "center", lg: "start" },
           }}

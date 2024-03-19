@@ -131,21 +131,18 @@ const ChatBoxContainer = () => {
         maxWidth: "550px",
       }}
     >
-      {!hasSelectedMessage && (
-        <Fade in={!hasSelectedMessage} timeout={500}>
-          <Image
-            src="/images/picOfMe.jpg"
-            alt="Portrait of Nader"
-            width={isMobile ? 150 : 300}
-            height={isMobile ? 150 : 300}
-            style={{
-              borderRadius: "50%",
-              alignSelf: "center",
-            }}
-          />
-        </Fade>
-      )}
-
+      <Image
+        src="/images/picOfMe.jpg"
+        alt="Portrait of Nader"
+        width={isMobile ? 150 : 300}
+        height={isMobile ? 150 : 300}
+        style={{
+          borderRadius: "50%",
+          alignSelf: "center",
+          transform: hasSelectedMessage ? "scale(0.5)" : "scale(1)",
+          transition: "all 0.3s ease-in-out",
+        }}
+      />
       <MessageContainer
         messages={messages}
         showTextBox={showTextBox}

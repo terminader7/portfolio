@@ -61,20 +61,6 @@ const MessageContainer = ({
                 gap: ".5rem",
               }}
             >
-              {showImage && (
-                <Fade in={hasSelectedMessage} timeout={500}>
-                  <Image
-                    src="/images/picOfMe.jpg"
-                    alt="Portrait of Nader"
-                    width={40}
-                    height={40}
-                    style={{
-                      borderRadius: "50%",
-                      alignSelf: "center",
-                    }}
-                  />
-                </Fade>
-              )}
               <MessageBubble isUser={message.isUser}>
                 <Typography variant="body1" fontWeight={500}>
                   {segment}
@@ -85,29 +71,15 @@ const MessageContainer = ({
         return segments;
       })}
       {isTyping && (
-        <InlineContainer gap=".5rem">
-          <Fade in={hasSelectedMessage} timeout={500}>
-            <Image
-              src="/images/picOfMe.jpg"
-              alt="Portrait of Nader"
-              width={40}
-              height={40}
-              style={{
-                borderRadius: "50%",
-                alignSelf: "center",
-              }}
-            />
-          </Fade>
-          <MessageBubble>
-            <TypingIndicator
-              variant="body2"
-              fontWeight={600}
-              sx={{ color: "common.white" }}
-            >
-              Typing...
-            </TypingIndicator>
-          </MessageBubble>
-        </InlineContainer>
+        <MessageBubble>
+          <TypingIndicator
+            variant="body2"
+            fontWeight={600}
+            sx={{ color: "common.white" }}
+          >
+            Typing...
+          </TypingIndicator>
+        </MessageBubble>
       )}
       {showTextBox && (
         <Box display="flex" justifyContent="center" marginTop="1rem">

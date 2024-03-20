@@ -141,7 +141,7 @@ const ChatBoxContainer = () => {
           alignSelf: "center",
           transform:
             hasSelectedMessage && !isMobile ? "scale(0.5)" : "scale(1)",
-          transition: "all 0.3s ease-in-out",
+          transition: "all 0.7s ease-in-out",
         }}
       />
       <MessageContainer

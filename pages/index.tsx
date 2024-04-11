@@ -342,17 +342,6 @@ export default function Home() {
               isRetired
             />
           </Grid>
-          <Grid item xs={12} lg={4}>
-            <ProjectContainer
-              projectImagePath="/images/contact-keeper.jpg"
-              projectImageAlt="Image of contact keeper app"
-              projectName="Contact Keeper"
-              projectDesc="Full stack MERN application for keeping track of contacts. Built with React, Node.js, Express, and MongoDB."
-              dateCompleted="2022"
-              link="https://github.com/terminader7/Contact-Keeper"
-              isRetired
-            />
-          </Grid>
         </Grid>
       </Box>
       <Box marginBottom="1rem">

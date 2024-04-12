@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import InlineContainer from "../components/InlineContainer";
 import { useTheme } from "@mui/material";
 import MultiColorLine from "../components/MultiColorLine";
@@ -65,12 +65,31 @@ export default function Home() {
         <InlineContainer
           sx={{
             padding: { xs: ".5rem", lg: "1rem" },
-            justifyContent: { xs: "center", lg: "start" },
+            justifyContent: "space-between",
           }}
         >
           <Typography variant="h6" fontWeight={600}>
             Nader Ebrahim
           </Typography>
+          <Button
+            variant="contained"
+            size="small"
+            sx={{
+              backgroundColor: "common.white",
+              gap: ".5rem",
+              fontWeight: "bold",
+              height: "2.5rem",
+              ":hover": {
+                backgroundColor: "primary.blue",
+              },
+            }}
+            onClick={() => {
+              window.open("https://github.com/terminader7/portfolio");
+            }}
+          >
+            <GitHubIcon fontSize="large" />
+            View the code
+          </Button>
         </InlineContainer>
         <MultiColorLine height={"2px"} width={"100%"} />
       </Box>

@@ -326,11 +326,22 @@ export default function Home() {
         </Typography>
         <Grid
           container
-          spacing={{ xs: 6, lg: 20 }}
+          spacing={{ xs: 6, lg: 4 }}
           sx={{
             justifyContent: { xs: "center", lg: "start" },
           }}
         >
+          <Grid item xs={12} lg={4}>
+            <ProjectContainer
+              projectImagePath="/images/weather-app.jpg"
+              projectImageAlt="Image of weather app"
+              projectName="Weather App"
+              projectDesc="A simple weather app built using React and the OpenWeatherMap API. 90% complete."
+              dateCompleted="2024"
+              link="https://weather-app-swart-mu-44.vercel.app/"
+              isWiP
+            />
+          </Grid>
           <Grid item xs={12} lg={4}>
             <ProjectContainer
               projectName="Hoops Hoopla"

@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import InlineContainer from "./InlineContainer";
-import StyledChip from "./StyledChip";
+import InlineContainer from "../../components/InlineContainer";
+import StyledChip from "../../components/StyledChip";
 import { useTheme } from "@mui/material";
 import LinkIcon from "@mui/icons-material/LaunchRounded";
 

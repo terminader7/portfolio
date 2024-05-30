@@ -1,6 +1,6 @@
 import { useTheme } from "@mui/material";
-import StyledChip from "./StyledChip";
-import InlineContainer from "./InlineContainer";
+import StyledChip from "../../components/StyledChip";
+import InlineContainer from "../../components/InlineContainer";
 
 const Skillset = () => {
   const theme = useTheme();

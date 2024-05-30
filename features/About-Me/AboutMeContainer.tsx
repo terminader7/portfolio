@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import MultiColorLine from "../../components/MultiColorLine";
-import Skillset from "../../components/Skillset";
+import Skillset from "./Skillset";
 import { useMediaQuery, useTheme } from "@mui/material";
 import Contact from "./Contact";
 

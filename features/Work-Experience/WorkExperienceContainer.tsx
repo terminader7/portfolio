@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InlineContainer from "../../components/InlineContainer";
-import ExperienceCard from "../../components/ExperienceCard";
+import ExperienceCard from "./ExperienceCard";
 import ArrowIcon from "@mui/icons-material/ArrowRightAltRounded";
 import { useMediaQuery, useTheme } from "@mui/material";
 
@@ -50,7 +50,7 @@ const WorkExperienceContainer = () => {
           imageSrc={"/images/sincera-logo.jpg"}
           companyName="Sincera"
           jobTitle="Frontend Engineer"
-          timeWorked="Nov 2020 - Aug 2022"
+          timeWorked="Jun 2021 - Aug 2022"
           description={sinceraDescription}
         />
         {isMobile ? (

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Card from "@mui/material/Card";
-import MultiColorLine from "./MultiColorLine";
+import MultiColorLine from "../../components/MultiColorLine";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { IconButton, useMediaQuery, useTheme } from "@mui/material";
@@ -35,9 +35,12 @@ const ExperienceCard = ({
         padding: "1rem",
         gap: "1rem",
         width: { xs: "90%", lg: "720px" },
-        maxHeight: isDescriptionVisible ? "40rem" : "10rem",
+        margin: "auto",
+        height: isDescriptionVisible
+          ? { xs: "34rem", md: "16rem" }
+          : { xs: "7rem", md: "6rem" },
         overflow: "hidden",
-        transition: "max-height 0.7s ease-in-out",
+        transition: "height 0.7s ease-in-out",
         position: "relative",
         ":hover": {
           cursor: "pointer",

@@ -40,7 +40,7 @@ const ExperienceCard = ({
           ? { xs: "34rem", md: "16rem" }
           : { xs: "7rem", md: "6rem" },
         overflow: "hidden",
-        transition: "height 0.7s ease-in-out",
+        transition: "height 0.6s ease-in-out",
         position: "relative",
         ":hover": {
           cursor: "pointer",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Fade, styled, Typography } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Image from "next/image";
@@ -47,6 +47,20 @@ const MessageContainer = ({
   hasSelectedMessage: boolean;
   isTyping: boolean;
 }) => {
+  const [delayedShowTextBox, setDelayedShowTextBox] = useState(false);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (showTextBox) {
+      timer = setTimeout(() => {
+        setDelayedShowTextBox(true);
+      }, 1000);
+    } else {
+      setDelayedShowTextBox(false);
+    }
+
+    return () => clearTimeout(timer);
+  }, [showTextBox]);
   return (
     <MessagesBox>
       {messages?.flatMap((message, index) => {
@@ -81,7 +95,7 @@ const MessageContainer = ({
           </TypingIndicator>
         </MessageBubble>
       )}
-      {showTextBox && (
+      {delayedShowTextBox && (
         <Box display="flex" justifyContent="center" marginTop="1rem">
           <EmailBox />
         </Box>

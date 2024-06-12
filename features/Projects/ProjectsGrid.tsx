@@ -44,10 +44,12 @@ const ProjectsGrid = () => {
         </Grid>
         <Grid item xs={12} lg={4}>
           <ProjectContainer
-            projectName="Hoops Hoopla"
-            projectDesc="Nba stat tracker app being built using SQL, Next, and MUI"
+            projectImagePath="/images/natural-disaster-tracker.jpg"
+            projectImageAlt="Image of natural disaster tracker app"
+            projectName="Natural Disaster Tracker"
+            projectDesc="A natural disaster tracker app being built using Next and the NASA API. Currently tracking wildfires."
             dateCompleted="2024"
-            link="https://github.com/terminader7/Hoops-Hoopla"
+            link="https://natural-disasters-tracker-dbwnc58q3-terminader7s-projects.vercel.app/"
             isWiP
           />
         </Grid>
@@ -59,6 +61,15 @@ const ProjectsGrid = () => {
             projectDesc="A simple React app that allows you to search for Github users and view their profile and repos using React and Node.js."
             link="https://github-finder-git-master-terminader7s-projects.vercel.app/"
             dateCompleted="2021"
+          />
+        </Grid>
+        <Grid item xs={12} lg={4}>
+          <ProjectContainer
+            projectName="Hoops Hoopla"
+            projectDesc="Nba stat tracker app being built using SQL, Next, and MUI"
+            dateCompleted="2024"
+            link="https://github.com/terminader7/Hoops-Hoopla"
+            isWiP
           />
         </Grid>
         <Grid item xs={12} lg={4}>

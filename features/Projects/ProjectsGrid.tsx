@@ -46,8 +46,8 @@ const ProjectsGrid = () => {
           <ProjectContainer
             projectImagePath="/images/natural-disaster-tracker.jpg"
             projectImageAlt="Image of natural disaster tracker app"
-            projectName="Natural Disaster Tracker"
-            projectDesc="A natural disaster tracker app being built using Next and the NASA API. Currently tracking wildfires."
+            projectName="Natural Events Around the World Tracker"
+            projectDesc="A natural events tracker app being built using Next and the NASA API. Currently tracking wildfires."
             dateCompleted="2024"
             link="https://natural-disasters-tracker-dbwnc58q3-terminader7s-projects.vercel.app/"
             isWiP

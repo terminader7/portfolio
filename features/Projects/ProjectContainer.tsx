@@ -47,7 +47,9 @@ const ProjectContainer = ({
         style={{
           borderRadius: "10px",
           filter: isRetired ? "brightness(0.6)" : "none",
+          cursor: link ? "pointer" : "default",
         }}
+        onClick={() => link && window.open(link, "_blank")}
       />
       <Typography
         variant="h6"

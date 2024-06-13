@@ -44,8 +44,8 @@ const ProjectsGrid = () => {
         </Grid>
         <Grid item xs={12} lg={4}>
           <ProjectContainer
-            projectImagePath="/images/natural-disaster-tracker.jpg"
-            projectImageAlt="Image of natural disaster tracker app"
+            projectImagePath="/images/natural-events-tracker.jpg"
+            projectImageAlt="Image of natural events tracker tracker app"
             projectName="Natural Events Around the World Tracker"
             projectDesc="A natural events tracker app being built using Next and the NASA API. Currently tracking wildfires."
             dateCompleted="2024"

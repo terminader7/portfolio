@@ -47,7 +47,7 @@ const ProjectsGrid = () => {
             projectImagePath="/images/natural-events-tracker.jpg"
             projectImageAlt="Image of natural events tracker tracker app"
             projectName="Natural Events World Tracker"
-            projectDesc="A natural events tracker app being built using Next and the NASA API."
+            projectDesc="A natural events tracker app being built using React and the NASA API."
             dateCompleted="2024"
             link="https://natural-disasters-tracker-dbwnc58q3-terminader7s-projects.vercel.app/"
           />

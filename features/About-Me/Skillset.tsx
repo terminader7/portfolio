@@ -34,6 +34,7 @@ const Skillset = () => {
       <StyledChip label="Warp" background={theme.palette.primary.green} />
       <StyledChip label="Git" background={theme.palette.primary.blue} />
       <StyledChip label="Node.js" background={theme.palette.primary.blue} />
+      <StyledChip label="Prisma" background={theme.palette.primary.blue} />
     </InlineContainer>
   );
 };

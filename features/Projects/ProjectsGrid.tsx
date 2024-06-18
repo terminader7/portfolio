@@ -33,13 +33,12 @@ const ProjectsGrid = () => {
       >
         <Grid item xs={12} lg={4}>
           <ProjectContainer
-            projectImagePath="/images/weather-app.jpg"
-            projectImageAlt="Image of weather app"
-            projectName="Weather App"
-            projectDesc="A  weather app being built using Next and the OpenWeatherMap API. Nearly finished just needs a little more functionality"
+            projectImagePath="/images/money-sink.jpg"
+            projectImageAlt="Image of money sink app"
+            projectName="Money Sink (Ecommerce Site)"
+            projectDesc="An ecommerce site being built using Next.js, Prisma, and Daisy UI. Uses Google OAuth for authentication. (No real purchases can be made)"
             dateCompleted="2024"
-            link="https://weather-app-swart-mu-44.vercel.app/"
-            isWiP
+            link="https://ecommerce-app-ashen-theta.vercel.app/"
           />
         </Grid>
         <Grid item xs={12} lg={4}>
@@ -52,6 +51,18 @@ const ProjectsGrid = () => {
             link="https://natural-disasters-tracker-dbwnc58q3-terminader7s-projects.vercel.app/"
           />
         </Grid>
+        <Grid item xs={12} lg={4}>
+          <ProjectContainer
+            projectImagePath="/images/weather-app.jpg"
+            projectImageAlt="Image of weather app"
+            projectName="Weather App"
+            projectDesc="A  weather app being built using Next and the OpenWeatherMap API. Nearly finished just needs a little more functionality"
+            dateCompleted="2024"
+            link="https://weather-app-swart-mu-44.vercel.app/"
+            isWiP
+          />
+        </Grid>
+
         <Grid item xs={12} lg={4}>
           <ProjectContainer
             projectImagePath="/images/github-app.jpg"

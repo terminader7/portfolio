@@ -48,7 +48,7 @@ const ProjectsGrid = () => {
             projectName="Natural Events World Tracker"
             projectDesc="A natural events tracker app being built using React and the NASA API."
             dateCompleted="2024"
-            link="https://natural-disasters-tracker-dbwnc58q3-terminader7s-projects.vercel.app/"
+            link="https://natural-disasters-tracker-amber.vercel.app/"
           />
         </Grid>
         <Grid item xs={12} lg={4}>
@@ -69,7 +69,7 @@ const ProjectsGrid = () => {
             projectImageAlt="Image of github finder app"
             projectName="Github Finder"
             projectDesc="A simple React app that allows you to search for Github users and view their profile and repos using React and Node.js."
-            link="https://github-finder-git-master-terminader7s-projects.vercel.app/"
+            link="https://github-finder-blond-nine.vercel.app/"
             dateCompleted="2021"
           />
         </Grid>

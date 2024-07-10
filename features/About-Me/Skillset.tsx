@@ -30,6 +30,7 @@ const Skillset = () => {
         label="Tailwind CSS"
         background={theme.palette.primary.yellow}
       />
+      <StyledChip label="Daisy UI" background={theme.palette.primary.yellow} />
       <StyledChip label="VSCode" background={theme.palette.primary.green} />
       <StyledChip label="Warp" background={theme.palette.primary.green} />
       <StyledChip label="Docker" background={theme.palette.primary.green} />

@@ -35,7 +35,7 @@ const AboutMeContainer = () => {
         </Typography>
         <MultiColorLine height={"12px"} width={"100%"} />
         <Typography variant="h6" sx={{ width: { lg: "80%" } }}>
-          I have over 3 years of experience in transforming abstract concepts
+          I have over 2 years of experience in transforming abstract concepts
           into tangible, user-friendly experiences.
         </Typography>
       </Box>

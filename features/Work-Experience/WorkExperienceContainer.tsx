@@ -46,21 +46,21 @@ const WorkExperienceContainer = () => {
           gap: "1rem",
         }}
       >
-        <ExperienceCard
+        {/* <ExperienceCard
           imageSrc={"/images/sincera-logo.jpg"}
           companyName="Sincera"
           jobTitle="Frontend Engineer"
           timeWorked="Jun 2021 - Aug 2022"
           description={sinceraDescription}
-        />
-        {isMobile ? (
+        /> */}
+        {/* {isMobile ? (
           <ArrowIcon
             fontSize="large"
             sx={{ alignSelf: "center", rotate: "90deg" }}
           />
         ) : (
           <ArrowIcon fontSize="large" sx={{ alignSelf: "center" }} />
-        )}
+        )} */}
         <ExperienceCard
           imageSrc={"/images/finli-logo.jpg"}
           companyName="Finli"

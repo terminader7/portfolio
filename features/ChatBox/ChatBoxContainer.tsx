@@ -16,7 +16,7 @@ const ChatBoxContainer = () => {
     about: "Tell me about yourself 🤔",
     hobbies: "What are your hobbies? 🏀",
     sendMessage: "Send a message 📬",
-    quote: "Quote of the day? 📜",
+    // quote: "Quote of the day? 📜",
     joke: "Tell me a joke 😂",
   };
 
@@ -41,13 +41,13 @@ const ChatBoxContainer = () => {
       "Perfect! Just type your message below, and I'll respond as soon as I can.",
   };
 
-  fetchRandomQuote()
-    .then((quote) => {
-      responseMap[userMessagesMap.quote] = quote;
-    })
-    .catch((error) => {
-      console.error("Error fetching random quote:", error);
-    });
+  // fetchRandomQuote()
+  //   .then((quote) => {
+  //     responseMap[userMessagesMap.quote] = quote;
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error fetching random quote:", error);
+  //   });
 
   fetchRandomJoke()
     .then((joke) => {
@@ -73,29 +73,29 @@ const ChatBoxContainer = () => {
     if (message === userMessagesMap.sendMessage) {
       setShowTextBox(true);
     }
-    if (message === userMessagesMap.quote) {
-      fetchRandomQuote().then((quote) => {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { message, isUser: true },
-        ]);
-        setTimeout(() => {
-          setMessages((prevMessages) => [
-            ...prevMessages,
-            {
-              message: quote,
-              isUser: false,
-            },
-          ]);
-          setIsTyping(false);
-        }, 2000);
-      });
-      setMessagesToSelect((prevMessages) =>
-        prevMessages.filter((msg) => msg !== message)
-      );
-      setHasSelectedMessage(true);
-      return;
-    }
+    // if (message === userMessagesMap.quote) {
+    //   fetchRandomQuote().then((quote) => {
+    //     setMessages((prevMessages) => [
+    //       ...prevMessages,
+    //       { message, isUser: true },
+    //     ]);
+    //     setTimeout(() => {
+    //       setMessages((prevMessages) => [
+    //         ...prevMessages,
+    //         {
+    //           message: quote,
+    //           isUser: false,
+    //         },
+    //       ]);
+    //       setIsTyping(false);
+    //     }, 2000);
+    //   });
+    //   setMessagesToSelect((prevMessages) =>
+    //     prevMessages.filter((msg) => msg !== message)
+    //   );
+    //   setHasSelectedMessage(true);
+    //   return;
+    // }
     setMessages((prevMessages) => [...prevMessages, { message, isUser: true }]);
     setTimeout(() => {
       setMessages((prevMessages) => [

@@ -1,10 +1,9 @@
 import Head from "next/head";
-import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import InlineContainer from "../components/InlineContainer";
 import { useTheme } from "@mui/material";
 import MultiColorLine from "../components/MultiColorLine";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import ProjectContainer from "../features/Projects/ProjectContainer";
 import CopyrightIcon from "@mui/icons-material/CopyrightRounded";
 import emailjs from "emailjs-com";
 import ChatBoxContainer from "../features/ChatBox/ChatBoxContainer";

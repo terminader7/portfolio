@@ -3,9 +3,31 @@ import Card from "@mui/material/Card";
 import MultiColorLine from "../../components/MultiColorLine";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Collapse, IconButton, useMediaQuery, useTheme } from "@mui/material";
+import { Collapse } from "@mui/material";
 import DownArrowIcon from "@mui/icons-material/ExpandMoreRounded";
 import { useState } from "react";
+import { styled } from "@mui/system";
+
+const ExperienceCardContainer = styled(Card)(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  display: "flex",
+  flexDirection: "row",
+  padding: "1rem",
+  gap: "1rem",
+  width: "90%",
+  maxWidth: "90%",
+  height: "auto",
+  overflow: "hidden",
+  transition: "height 0.6s ease-in-out",
+  position: "relative",
+  ":hover": {
+    cursor: "pointer",
+  },
+  [theme.breakpoints.up("lg")]: {
+    width: "720px",
+    maxWidth: "720px",
+  },
+}));
 
 const ExperienceCard = ({
   imageSrc,
@@ -20,31 +42,12 @@ const ExperienceCard = ({
   timeWorked: string;
   description: string;
 }) => {
-  const theme = useTheme();
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
   const handleToggle = () => {
     setIsDescriptionVisible(!isDescriptionVisible);
   };
   return (
-    <Card
-      onClick={handleToggle}
-      sx={{
-        backgroundColor: theme.palette.background.paper,
-        display: "flex",
-        flexDirection: "row",
-        padding: "1rem",
-        gap: "1rem",
-        width: { xs: "90%", lg: "720px" },
-        margin: "auto",
-        height: "auto",
-        overflow: "hidden",
-        transition: "height 0.6s ease-in-out",
-        position: "relative",
-        ":hover": {
-          cursor: "pointer",
-        },
-      }}
-    >
+    <ExperienceCardContainer onClick={handleToggle}>
       <Image
         src={imageSrc}
         alt="Nader"
@@ -76,7 +79,7 @@ const ExperienceCard = ({
           transition: "transform 0.3s ease-in-out",
         }}
       />
-    </Card>
+    </ExperienceCardContainer>
   );
 };
 

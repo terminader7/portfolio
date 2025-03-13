@@ -12,9 +12,9 @@ const ExperienceCardContainer = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
   display: "flex",
   flexDirection: "row",
-  padding: "1rem",
-  gap: "1rem",
-  width: "90%",
+  padding: ".5rem",
+  gap: ".5rem",
+  width: "500px",
   maxWidth: "90%",
   height: "auto",
   overflow: "hidden",
@@ -23,9 +23,17 @@ const ExperienceCardContainer = styled(Card)(({ theme }) => ({
   ":hover": {
     cursor: "pointer",
   },
+  [theme.breakpoints.up("md")]: {
+    width: "650px",
+    maxWidth: "90%",
+    padding: ".75rem",
+    gap: ".75rem",
+  },
   [theme.breakpoints.up("lg")]: {
     width: "720px",
     maxWidth: "720px",
+    padding: "1rem",
+    gap: "1rem",
   },
 }));
 
@@ -63,7 +71,14 @@ const ExperienceCard = ({
         <Typography variant="body1" textAlign="start">
           <strong> {jobTitle}</strong> - {timeWorked}
         </Typography>
-        <Collapse in={isDescriptionVisible} timeout="auto" unmountOnExit>
+        <Collapse
+          in={isDescriptionVisible}
+          timeout="auto"
+          unmountOnExit
+          sx={{
+            width: "auto",
+          }}
+        >
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
             {description}
           </Typography>

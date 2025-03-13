@@ -78,24 +78,19 @@ export default function Home() {
       </Box>
       <InlineContainer
         sx={{
-          justifyContent: { xs: "center", lg: "" },
+          justifyContent: "center",
+          alignItems: "center",
           gap: { xs: "3rem", lg: "8rem" },
           height: { xs: "100%", lg: "85vh" },
           width: "100%",
           flexDirection: { xs: "column-reverse", lg: "row" },
-          marginLeft: "auto",
-          marginRight: "auto",
+          marginX: "auto",
+          paddingX: { xs: "1rem", lg: "3rem", xl: "0" },
           maxWidth: "1500px",
         }}
       >
         <AboutMeContainer />
-        <Box
-          sx={{
-            width: { xs: "100%", lg: "45%" },
-          }}
-        >
-          <ChatBoxContainer />
-        </Box>
+        <ChatBoxContainer />
       </InlineContainer>
       <WorkExperienceContainer />
       <ProjectsGrid />

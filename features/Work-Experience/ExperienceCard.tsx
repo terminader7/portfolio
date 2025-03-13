@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import MultiColorLine from "../../components/MultiColorLine";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { IconButton, useMediaQuery, useTheme } from "@mui/material";
+import { Collapse, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import DownArrowIcon from "@mui/icons-material/ExpandMoreRounded";
 import { useState } from "react";
 
@@ -36,9 +36,7 @@ const ExperienceCard = ({
         gap: "1rem",
         width: { xs: "90%", lg: "720px" },
         margin: "auto",
-        height: isDescriptionVisible
-          ? { xs: "34rem", md: "16rem" }
-          : { xs: "7rem", md: "6rem" },
+        height: "auto",
         overflow: "hidden",
         transition: "height 0.6s ease-in-out",
         position: "relative",
@@ -62,9 +60,11 @@ const ExperienceCard = ({
         <Typography variant="body1" textAlign="start">
           <strong> {jobTitle}</strong> - {timeWorked}
         </Typography>
-        {isDescriptionVisible && (
-          <Typography variant="body1">{description}</Typography>
-        )}
+        <Collapse in={isDescriptionVisible} timeout="auto" unmountOnExit>
+          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
+            {description}
+          </Typography>
+        </Collapse>
       </Box>
       <DownArrowIcon
         sx={{

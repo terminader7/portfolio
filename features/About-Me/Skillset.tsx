@@ -10,7 +10,7 @@ const Skillset = () => {
       sx={{
         flexWrap: "wrap",
         justifyContent: { xs: "center", lg: "start" },
-        maxWidth: "400px",
+        maxWidth: { xs: "100%", lg: "600px" },
       }}
     >
       <StyledChip label="HTML" background={theme.palette.primary.red} />
